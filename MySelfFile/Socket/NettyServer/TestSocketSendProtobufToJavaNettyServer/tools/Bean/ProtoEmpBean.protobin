@@ -1,0 +1,20 @@
+
+Ã
+Bean/ProtoEmpBean.protocom.itstack.bean"›
+EmpBean
+empName (	
+empQQ (	
+	empInDate (	1
+
+empCompany (2.com.itstack.bean.CompanyBean*
+empType (2.com.itstack.bean.EmpEnum"H
+CompanyBean
+JobSeniority (	
+CompanyName (	
+Salary (	*.
+EmpEnum
+Harmast
+
+Manage
+
+Common

@@ -1,0 +1,28 @@
+package com.itstack.bean;
+
+//普通类类型 雇员持久化类
+message EmpBean{
+	
+	required string empName = 1;		//required 必须字段 雇员姓名
+	required string empQQ = 2;		//required 必须字段 雇员QQ
+	required string empInDate = 3;		//required 必须字段 雇员入职日期
+	repeated CompanyBean empCompany = 4;	//repeated 重复字段 雇员工作经历【重复字段相当于集合使用】
+	required EmpEnum empType = 5;		//required 必须字段 雇员类别
+}
+
+//枚举类型 雇员枚举
+enum EmpEnum{
+	Harmast = 1;	//群主
+	Manage = 2;	//管理
+	Common = 3;	//普通
+}
+
+//普通类类型 公司信息
+message CompanyBean{
+	
+	required string JobSeniority = 1;	//required 必须字段 工作工龄
+	required string CompanyName = 2;	//required 必须字段 公司名称
+	optional string Salary = 3;		//optional 可选字段 薪资待遇
+	
+}
+

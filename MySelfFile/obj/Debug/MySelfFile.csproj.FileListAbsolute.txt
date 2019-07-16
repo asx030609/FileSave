@@ -1,0 +1,5 @@
+E:\repository\TestSynCompany\Regex\MySelfFile\obj\Debug\MySelfFile.csprojAssemblyReference.cache
+E:\repository\TestSynCompany\Regex\MySelfFile\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\repository\TestSynCompany\Regex\MySelfFile\obj\Debug\MySelfFile.Socket.NettyServer.WindowsFormsApp1.Properties.Resources.resources
+E:\repository\TestSynCompany\Regex\MySelfFile\obj\Debug\MySelfFile.csproj.GenerateResource.cache
+E:\repository\TestSynCompany\Regex\MySelfFile\obj\Debug\MySelfFile.csproj.CoreCompileInputs.cache

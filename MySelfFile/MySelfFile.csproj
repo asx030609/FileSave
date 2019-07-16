@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68B8A714-D5E8-4EDF-AFEC-A84AA34019AA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MySelfFile</RootNamespace>
+    <AssemblyName>MySelfFile</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Socket\NettyServer\Backup\TestSocketSendProtobufToJavaNettyServer\Program.cs" />
+    <Compile Include="Socket\NettyServer\Backup\TestSocketSendProtobufToJavaNettyServer\Properties\AssemblyInfo.cs" />
+    <Compile Include="Socket\NettyServer\Backup\TestSocketSendProtobufToJavaNettyServer\ProtoEmpBean.cs" />
+    <Compile Include="Socket\NettyServer\ConsoleApp1\Class1.cs" />
+    <Compile Include="Socket\NettyServer\ConsoleApp1\EchoServerHandler.cs" />
+    <Compile Include="Socket\NettyServer\ConsoleApp1\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Socket\NettyServer\ConsoleApp1\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Socket\NettyServer\ConsoleApp1\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Socket\NettyServer\ConsoleApp1\Program.cs" />
+    <Compile Include="Socket\NettyServer\ConsoleApp1\Properties\AssemblyInfo.cs" />
+    <Compile Include="Socket\NettyServer\ConsoleApp1\ServerSettings.cs" />
+    <Compile Include="Socket\NettyServer\NettyClient\Class1.cs" />
+    <Compile Include="Socket\NettyServer\NettyClient\ClientSettings.cs" />
+    <Compile Include="Socket\NettyServer\NettyClient\EchoClientHandler.cs" />
+    <Compile Include="Socket\NettyServer\NettyClient\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Socket\NettyServer\NettyClient\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Socket\NettyServer\NettyClient\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Socket\NettyServer\NettyClient\Program.cs" />
+    <Compile Include="Socket\NettyServer\NettyClient\Properties\AssemblyInfo.cs" />
+    <Compile Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\Program.cs" />
+    <Compile Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\Properties\AssemblyInfo.cs" />
+    <Compile Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\ProtoEmpBean.cs" />
+    <Compile Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\ProtoEmpBean.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\EchoServerHandler.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\Form1.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\Program.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\Properties\AssemblyInfo.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\Properties\Resources.Designer.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\Properties\Settings.Designer.cs" />
+    <Compile Include="Socket\NettyServer\WindowsFormsApp1\ServerSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="8月绩效考核表-吴祖强.xlsx" />
+    <None Include="Keytop\BenXH_WUV0.rar" />
+    <None Include="Keytop\BenXH_wuV1.rar" />
+    <None Include="Keytop\FreeMind.zip" />
+    <None Include="Keytop\TestWeb.Config是否一样\Web.config" />
+    <None Include="Keytop\V.5.2.0.0_4.rar" />
+    <None Include="Keytop\停车场收费系统各模块流程%281%29.rar" />
+    <None Include="Keytop\内码开发协议及应用指南V1.2.pdf" />
+    <None Include="Keytop\工行无感停车接口文档（纯无感停车无扫码预支付）_微联达_20181011.pdf" />
+    <None Include="Keytop\常州环球恐龙城_迪诺水镇\000A初始化需求.rar" />
+    <None Include="Keytop\风筝部署工具KTFilesMove_2.1.1.zip" />
+    <None Include="Socket\netty-4-user-guide.pdf" />
+    <None Include="Socket\NettyServer.zip" />
+    <None Include="Socket\NettyServer\ConsoleApp1\App.config" />
+    <None Include="Socket\NettyServer\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config" />
+    <None Include="Socket\NettyServer\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete" />
+    <None Include="Socket\NettyServer\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache" />
+    <None Include="Socket\NettyServer\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache" />
+    <None Include="Socket\NettyServer\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache" />
+    <None Include="Socket\NettyServer\ConsoleApp1\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Socket\NettyServer\NettyClient\App.config" />
+    <None Include="Socket\NettyServer\NettyClient\bin\Debug\NettyClient.exe.config" />
+    <None Include="Socket\NettyServer\NettyClient\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Socket\NettyServer\NettyClient\obj\Debug\NettyClient.csproj.CopyComplete" />
+    <None Include="Socket\NettyServer\NettyClient\obj\Debug\NettyClient.csproj.CoreCompileInputs.cache" />
+    <None Include="Socket\NettyServer\NettyClient\obj\Debug\NettyClient.csprojAssemblyReference.cache" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\MonoAndroid10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\MonoTouch10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\xamarinios10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\xamarinmac20\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\xamarintvos10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\xamarinwatchos10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\MonoAndroid10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\MonoTouch10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\xamarinios10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\xamarinmac20\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\xamarintvos10\_._" />
+    <None Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\xamarinwatchos10\_._" />
+    <None Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\obj\Debug\TestSocketSendProtobufToJavaNettyServer.csproj.CopyComplete" />
+    <None Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\obj\Debug\TestSocketSendProtobufToJavaNettyServer.csproj.CoreCompileInputs.cache" />
+    <None Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\obj\Debug\TestSocketSendProtobufToJavaNettyServer.csprojAssemblyReference.cache" />
+    <None Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\Bean\ProtoEmpBean.proto" />
+    <None Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\Bean\ProtoEmpBean.protobin" />
+    <None Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\getCS.bat" />
+    <None Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\ProtoGen.exe.config" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\App.config" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\build.force" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache" />
+    <None Include="Socket\NettyServer\WindowsFormsApp1\Properties\Settings.settings" />
+    <None Include="Socket\Netty实战.pdf" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\.gitignore" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\META-INF\MANIFEST.MF" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\artifacts\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\artifacts\PcControlServer_jar\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\BaseModel%24Companion%24WhenMappings.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\BaseModel%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\BaseModel%24Flag%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\BaseModel%24Flag.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\BaseModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\AllFilesEndModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\AllFilesStartModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\AllowFileTransferModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\RejectFileTransferModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\RequestFileTransferModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\SingleFileContentModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\SingleFileEndModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\SingleFileInfoModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseClickModel%24Buttons%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseClickModel%24Buttons.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseClickModel%24Events%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseClickModel%24Events.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseClickModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseMoveModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseWheelModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\ShortcutsModel%24Shortcuts%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\ShortcutsModel%24Shortcuts.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\ShortcutsModel.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\command\NettyServer%24Companion%24nettyServer%242.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\command\NettyServer%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\command\NettyServer%24sendPacket%241.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\command\NettyServer.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\command\ServerHandler%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\command\ServerHandler%24WhenMappings.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\command\ServerHandler.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\command\ServerInitializer.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\io\IoServerHandler%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\io\IoServerHandler%24WhenMappings.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\io\IoServerHandler.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\io\IoServerInitializer.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\io\NettyIoServer%24Companion%24nettyServer%242.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\io\NettyIoServer%24Companion.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\io\NettyIoServer%24sendPacket%241.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\nettyserver\io\NettyIoServer.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\PcControlServer%24main%241.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\PcControlServer%24main%242.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\out\production\PcControlServer\com\chenxi1991\pccontrolserver\PcControlServer.class" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\PcControlServer.iml" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\BaseModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\AllFilesEndModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\AllFilesStartModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\AllowFileTransferModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\RejectFileTransferModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\RequestFileTransferModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\SingleFileContentModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\SingleFileEndModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\filetransfer\SingleFileInfoModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\keynote\AllowShowPages.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\keynote\AndroidEndShowModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\keynote\NextStepModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\keynote\PcEndShowModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\keynote\RejectShowPages.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\keynote\RequestShowPagesModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\keynote\SwitchPageModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\screencatpture\android2pc\AllowAndroidToPc.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\screencatpture\android2pc\Android2PcCommandModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\screencatpture\pc2android\AllowPcToAndroid.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\screencatpture\pc2android\Pc2AndroidCommandModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\screencatpture\ScreenCaptureFrameModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseClickModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseMoveModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\MouseWheelModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\touchpad\ShortcutsModel.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\nettyserver\command\NettyServer.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\nettyserver\command\ServerHandler.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\nettyserver\command\ServerInitializer.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\nettyserver\io\IoServerHandler.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\nettyserver\io\IoServerInitializer.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\nettyserver\io\NettyIoServer.kt" />
+    <None Include="SynJavaNetty\PcControlServer\PcControlServer\src\com\chenxi1991\pccontrolserver\PcControlServer.kt" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\out\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\out\artifacts\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\out\artifacts\PcControlServer_jar\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\out\production\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\src\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\src\com\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\src\com\chenxi1991\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\src\com\chenxi1991\pccontrolserver\._.DS_Store" />
+    <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\._.DS_Store" />
+    <None Include="UBC测试结果及更改.docx" />
+    <None Include="uboardmate2.pdf" />
+    <None Include="优迈科职位JD.docx" />
+    <None Include="周总结\周总结20180626至20180629-吴祖强.docx" />
+    <None Include="周总结\周总结20180702至20180706-吴祖强.docx" />
+    <None Include="周总结\周总结20180709至20180713-吴祖强.docx" />
+    <None Include="周总结\周总结20180716至20180720-吴祖强.docx" />
+    <None Include="周总结\周总结20180723至20180727-吴祖强.docx" />
+    <None Include="周总结\周总结20180827至20180831-吴祖强.docx" />
+    <None Include="周总结\周总结20180813至20180817-吴祖强.docx" />
+    <None Include="周总结\周总结20180806至20180810-吴祖强.docx" />
+    <None Include="周总结\周总结20180730至20180803-吴祖强.docx" />
+    <None Include="周总结\周总结20180820至20180824-吴祖强.docx" />
+    <None Include="周总结\总结模板-wu.docx" />
+    <None Include="星燊的服务端和客户端\Client\appsettings.json" />
+    <None Include="星燊的服务端和客户端\Client\dotnetty.com.pfx" />
+    <None Include="星燊的服务端和客户端\Client\Echo.Client.exe.config" />
+    <None Include="星燊的服务端和客户端\Server\net451\win-x64\appsettings.json" />
+    <None Include="星燊的服务端和客户端\Server\net451\win-x64\dotnetty.com.pfx" />
+    <None Include="星燊的服务端和客户端\Server\net451\win-x64\Echo.Server.exe.config" />
+    <None Include="星燊的服务端和客户端\Server\netcoreapp1.1\appsettings.json" />
+    <None Include="星燊的服务端和客户端\Server\netcoreapp1.1\dotnetty.com.pfx" />
+    <None Include="星燊的服务端和客户端\Server\netcoreapp1.1\Echo.Server.deps.json" />
+    <None Include="星燊的服务端和客户端\Server\netcoreapp1.1\Echo.Server.runtimeconfig.dev.json" />
+    <None Include="星燊的服务端和客户端\Server\netcoreapp1.1\Echo.Server.runtimeconfig.json" />
+    <None Include="绩效考核表-吴祖强.xlsx" />
+    <None Include="编程规范V1.1.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Keytop\NewFolder1\珠海格力海岸的p_en_inoutjudge.sql" />
+    <Content Include="Socket\NettyServer\Backup\TestSocketSendProtobufToJavaNettyServer.sln" />
+    <Content Include="Socket\NettyServer\Backup\TestSocketSendProtobufToJavaNettyServer\dll\Google.ProtocolBuffers.dll" />
+    <Content Include="Socket\NettyServer\Backup\TestSocketSendProtobufToJavaNettyServer\TestSocketSendProtobufToJavaNettyServer.csproj" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\ConsoleApp1.exe" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\ConsoleApp1.pdb" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Buffers.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Buffers.pdb" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Buffers.xml" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Codecs.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Codecs.pdb" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Codecs.xml" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Common.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Common.pdb" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Common.xml" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Handlers.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Handlers.pdb" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Handlers.xml" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Transport.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Transport.Libuv.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Transport.Libuv.pdb" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Transport.Libuv.xml" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Transport.pdb" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\DotNetty.Transport.xml" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\Microsoft.Extensions.Logging.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\ConsoleApp1.csproj" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.FileListAbsolute.txt" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\obj\Debug\ConsoleApp1.exe" />
+    <Content Include="Socket\NettyServer\ConsoleApp1\obj\Debug\ConsoleApp1.pdb" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Buffers.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Buffers.pdb" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Buffers.xml" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Codecs.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Codecs.pdb" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Codecs.xml" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Common.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Common.pdb" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Common.xml" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Handlers.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Handlers.pdb" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Handlers.xml" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Transport.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Transport.Libuv.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Transport.Libuv.pdb" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Transport.Libuv.xml" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Transport.pdb" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\DotNetty.Transport.xml" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\Microsoft.Extensions.Logging.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\NettyClient.exe" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\NettyClient.pdb" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Socket\NettyServer\NettyClient\NettyClient.csproj" />
+    <Content Include="Socket\NettyServer\NettyClient\obj\Debug\NettyClient.csproj.FileListAbsolute.txt" />
+    <Content Include="Socket\NettyServer\NettyClient\obj\Debug\NettyClient.exe" />
+    <Content Include="Socket\NettyServer\NettyClient\obj\Debug\NettyClient.pdb" />
+    <Content Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\dotnet_library_license.txt" />
+    <Content Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\win8\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\wpa81\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ref\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Socket\NettyServer\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\ThirdPartyNotices.txt" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer.sln" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\bin\Debug\Google.ProtocolBuffers.dll" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\bin\Debug\TestSocketSendProtobufToJavaNettyServer.exe" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\bin\Debug\TestSocketSendProtobufToJavaNettyServer.pdb" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\bin\Debug\TestSocketSendProtobufToJavaNettyServer.vshost.exe" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\dll\Google.ProtocolBuffers.dll" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\obj\Debug\TestSocketSendProtobufToJavaNettyServer.csproj.FileListAbsolute.txt" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\obj\Debug\TestSocketSendProtobufToJavaNettyServer.exe" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\obj\Debug\TestSocketSendProtobufToJavaNettyServer.pdb" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\TestSocketSendProtobufToJavaNettyServer.csproj" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\Google.ProtocolBuffers.dll" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\protoc.exe" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\ProtoGen.exe" />
+    <Content Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\tools\ReadMe.txt" />
+    <Content Include="Socket\NettyServer\UpgradeLog.htm" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Buffers.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Buffers.pdb" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Buffers.xml" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Codecs.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Codecs.pdb" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Codecs.xml" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Common.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Common.pdb" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Common.xml" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Handlers.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Handlers.pdb" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Handlers.xml" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Transport.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Transport.Libuv.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Transport.Libuv.pdb" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Transport.Libuv.xml" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Transport.pdb" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\DotNetty.Transport.xml" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\Microsoft.Extensions.Logging.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.FileListAbsolute.txt" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb" />
+    <Content Include="Socket\NettyServer\WindowsFormsApp1\WindowsFormsApp1.csproj" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\artifacts\PcControlServer_jar.xml" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\kotlinc.xml" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\libraries\KotlinJavaRuntime.xml" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\libraries\netty_4_1_13.xml" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\misc.xml" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\modules.xml" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\vcs.xml" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\workspace.xml" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\libs\netty-4.1.13.jar" />
+    <Content Include="SynJavaNetty\PcControlServer\PcControlServer\out\artifacts\PcControlServer_jar\PcControlServer.jar" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Buffers.dll" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Buffers.pdb" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Buffers.xml" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Codecs.dll" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Codecs.pdb" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Codecs.xml" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Common.dll" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Common.pdb" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Common.xml" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Handlers.dll" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Handlers.pdb" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Handlers.xml" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Transport.dll" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Transport.pdb" />
+    <Content Include="星燊的服务端和客户端\Client\DotNetty.Transport.xml" />
+    <Content Include="星燊的服务端和客户端\Client\Echo.Client.exe" />
+    <Content Include="星燊的服务端和客户端\Client\Echo.Client.pdb" />
+    <Content Include="星燊的服务端和客户端\Client\Examples.Common.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Examples.Common.pdb" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.Configuration.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.Configuration.Json.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.FileProviders.Physical.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.FileSystemGlobbing.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.Logging.Console.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.Logging.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Microsoft.Extensions.Primitives.dll" />
+    <Content Include="星燊的服务端和客户端\Client\Newtonsoft.Json.dll" />
+    <Content Include="星燊的服务端和客户端\Client\System.Collections.Immutable.dll" />
+    <Content Include="星燊的服务端和客户端\Client\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="星燊的服务端和客户端\Client\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="星燊的服务端和客户端\Client\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Buffers.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Buffers.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Buffers.xml" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Codecs.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Codecs.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Codecs.xml" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Common.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Common.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Common.xml" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Handlers.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Handlers.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Handlers.xml" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Transport.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Transport.Libuv.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Transport.Libuv.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Transport.Libuv.xml" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Transport.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\DotNetty.Transport.xml" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Echo.Server.exe" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Echo.Server.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Examples.Common.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Examples.Common.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\libuv.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.Configuration.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.Configuration.Json.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.FileProviders.Physical.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.FileSystemGlobbing.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.Logging.Console.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.Logging.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Microsoft.Extensions.Primitives.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\Newtonsoft.Json.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\System.Collections.Immutable.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="星燊的服务端和客户端\Server\net451\win-x64\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Buffers.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Buffers.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Buffers.xml" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Codecs.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Codecs.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Codecs.xml" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Common.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Common.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Common.xml" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Handlers.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Handlers.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Handlers.xml" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Transport.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Transport.Libuv.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Transport.Libuv.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Transport.Libuv.xml" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Transport.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\DotNetty.Transport.xml" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\Echo.Server.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\Echo.Server.pdb" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\Examples.Common.dll" />
+    <Content Include="星燊的服务端和客户端\Server\netcoreapp1.1\Examples.Common.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Socket\NettyServer\WindowsFormsApp1\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources" />
+    <EmbeddedResource Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources" />
+    <EmbeddedResource Include="Socket\NettyServer\WindowsFormsApp1\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Keytop\BXHSerialPort20181018\BXHSerialPort\" />
+    <Folder Include="Keytop\DataBase\" />
+    <Folder Include="Keytop\DbOper\" />
+    <Folder Include="Keytop\OrinV4Publish\" />
+    <Folder Include="Socket\NettyServer\ConsoleApp1\obj\Debug\TempPE\" />
+    <Folder Include="Socket\NettyServer\NettyClient\obj\Debug\TempPE\" />
+    <Folder Include="Socket\NettyServer\TestSocketSendProtobufToJavaNettyServer\obj\Debug\TempPE\" />
+    <Folder Include="Socket\NettyServer\WindowsFormsApp1\bin\Release\" />
+    <Folder Include="Socket\NettyServer\WindowsFormsApp1\obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
