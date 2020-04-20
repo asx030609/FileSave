@@ -1,0 +1,7 @@
+  CREATE OR REPLACE VIEW VW_001(name,minsal,maxsal,avgsal)
+     AS SELECT e.TRANSFER_RATEU,min(e.TRANSFER_RATEU),max(e.TRANSFER_RATEU),avg(e.TRANSFER_RATEU)
+        FROM    BI_PRODUCT_UNITU e GROUP BY e.TRANSFER_RATEU;
+        
+        
+        /
+  SELECT * FROM VW_001;
