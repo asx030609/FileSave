@@ -229,6 +229,7 @@
     <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\src\com\chenxi1991\._.DS_Store" />
     <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\src\com\chenxi1991\pccontrolserver\._.DS_Store" />
     <None Include="SynJavaNetty\PcControlServer\__MACOSX\PcControlServer\src\com\chenxi1991\pccontrolserver\communicationmodels\._.DS_Store" />
+    <None Include="THOK\辅料库培训资料\洛阳辅料库指导手册.ppt" />
     <None Include="UBC测试结果及更改.docx" />
     <None Include="uboardmate2.pdf" />
     <None Include="优迈科职位JD.docx" />
@@ -381,6 +382,7 @@
     <Content Include="SynJavaNetty\PcControlServer\PcControlServer\.idea\workspace.xml" />
     <Content Include="SynJavaNetty\PcControlServer\PcControlServer\libs\netty-4.1.13.jar" />
     <Content Include="SynJavaNetty\PcControlServer\PcControlServer\out\artifacts\PcControlServer_jar\PcControlServer.jar" />
+    <Content Include="THOK\辅料库培训资料\非PPT文档见有道云笔记.txt" />
     <Content Include="星燊的服务端和客户端\Client\DotNetty.Buffers.dll" />
     <Content Include="星燊的服务端和客户端\Client\DotNetty.Buffers.pdb" />
     <Content Include="星燊的服务端和客户端\Client\DotNetty.Buffers.xml" />
