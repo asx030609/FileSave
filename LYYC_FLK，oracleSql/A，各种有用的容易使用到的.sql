@@ -84,6 +84,14 @@ WHERE
 	order by a.Table_Name asc;
 --*/
 
+/*禁用主外键，以便更新主键引用表中的列    ---------->>>>>>好像没必要禁用，直接就可以更改了
+select 'alter table '||'BI_PRODUCT_UNITU'||' disable constraint '||'FK_BI_PRODUCT_UNITU_1434066075'||';' from user_constraints where constraint_type='R'; 
+alter table BI_PRODUCT_UNITU disable constraint FK_BI_PRODUCT_UNITU_1434066075;
+UPDATE BI_PRODUCT_UNITU SET PRODUCT_CODEU='TEST_TEST' WHERE PRODUCT_CODEU='P0003'; ----只能更新主键引用表，被引用表的CODE不能更改
+----select 'alter table '||'BI_PRODUCTU'||' disable constraint '||'PK_BI_PRODUCTU'||';' from user_constraints where constraint_type='P' AND ROWNUM=1;  
+----alter table BI_PRODUCTU disable constraint PK_BI_PRODUCTU; ----ERROR：SQL 错误: ORA-02297: 无法禁用约束条件 (C##FUSION.PK_BI_PRODUCTU) - 存在相关性
+--*/
+
 /*
 ----查询某表的所有索引
 SELECT 
