@@ -1,0 +1,67 @@
+查看物理数据库名：
+select name from v$database;
+查看实例名：
+select instance_name from v$instance;
+
+
+--这段里面的语句都成功
+/*
+--提示用户连接错误时，如下处理
+  SELECT SID,SERIAL# FROM V$SESSION WHERE USERNAME='C##FUSION';
+  alter system kill session '868,13464';
+--*/
+drop tablespace C##Fusion INCLUDING CONTENTS AND DATAFILES;
+drop user C##Fusion cascade;
+drop  directory C##Fusion;
+--/*
+create tablespace C##Fusion datafile 'D:\workspace\Data\Fusion\Fusion.dbf' size 256m autoextend on next 256m extent management local;
+create user C##Fusion IDENTIFIED BY admin123456COM;
+alter user C##Fusion default tablespace C##Fusion temporary tablespace temp;
+create directory C##Fusion as 'D:\workspace\Data\Fusion';
+grant create session,create table,unlimited tablespace to C##Fusion;
+grant create user,drop user,alter user ,create any view , drop any view,exp_full_database,imp_full_database,dba,connect,resource,create session to C##Fusion;
+grant read,write on directory C##Fusion to C##Fusion;
+--imp  SA/123456@scxcflk file='D:\orcldata\backup\THOKflk.dmp' full=y ignore=y; --
+--create directory mydata as 'D:\data\oracle\oradata\mydata';     --主要是给mydata/ly1.dmp文件授权，impdp才能正常运行
+--grant read,write on directory mydata to C##Fusion;
+--cmd下执行这个--注，最后不要分号；
+--impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=LY2020.dmp 成功
+
+备份
+exp demo/demo@orcl buffer=1024 file=d：\back.dmp full=y
+exp C##Fusion/admin123456COM@172.30.20.57/orcl file=D:\Fusion20191124.dmp full=y 成功
+expdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=LY2020.dmp 
+demo：用户名、密码 
+buffer: 缓存大小
+file: 具体的备份文件地址 
+full: 是否导出全部文件 
+ignore: 忽略错误，如果表已经存在，则也是覆盖 
+备份指定表
+----create directory mydata as 'D:\data\oracle\oradata\mydata';  sql>select * from dba_directories;
+--cmd中--expdp C##Fusion/admin123456COM directory=C##Fusion dumpfile=ly_tb_20191125.dmp [logfile=expdp.log] tables=(TM_WORK_POSITIONU,WM_MACHINE_PALLETU); 成功
+--cmd中--expdp C##Fusion/admin123456COM@172.30.20.57/orcl directory=C##Fusion dumpfile=ly2020.dmp [logfile=expdp.log]; 成功
+还原指定表
+--cmd中--impdp C##Fusion/admin123456COM directory=C##Fusion dumpfile=ly_tb_20191125.dmp [logfile=expdp.log] tables=(TM_WORK_POSITIONU,WM_MACHINE_PALLETU); 成功
+
+导出指定表
+exp C##FUSION/admin123456COM@172.30.20.37/orcl file=C:\Users\DEVELOP\Desktop\Fusion_tagu.dmp tables=(DMT_TAGU) 成功
+
+
+
+还原
+imp demo/demo@orcl file=d:\back.dmp full=y ignore=y log=D:\implog.txt
+imp C##Fusion/admin123456COM@127.0.0.1/orcl file=d:\Fusion.dmp full=y 成功
+
+1、完整还原
+
+imp demo/demo@orcl file=d:\back.dmp full=y ignore=y log=D:\implog.txt
+指定log很重要，便于分析错误进行补救。
+2、导入指定表：
+
+imp demo/demo@orcl file=d:\backup2.dmp tables=(teachers,students)	:dmp
+
+3、还原到远程服务器
+
+imp 用户名/密码@远程的IP:端口/实例 file=存放的位置\文件名称.dmp full=y
+
+https://blog.csdn.net/yztezhl/article/details/80451046

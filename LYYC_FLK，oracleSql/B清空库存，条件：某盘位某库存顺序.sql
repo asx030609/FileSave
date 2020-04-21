@@ -32,7 +32,7 @@ SET SERVEROUTPUT ON;
 Declare
   ret varchar2(20);
 Begin
-  --dbms_output.put_line('返回值：'||F_ClearThisPalletInfo('01-01-01',2));
+  dbms_output.put_line('返回值：'||F_ClearThisPalletInfo('01-27-01',0));
   COMMIT WORK;
 EXCEPTION
 WHEN OTHERS THEN

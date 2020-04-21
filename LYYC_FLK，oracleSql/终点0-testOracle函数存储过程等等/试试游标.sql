@@ -1,4 +1,22 @@
 SET SERVEROUTPUT ON  
+
+
+----在Fusion数据库中是可以使用的，没错误的（成功）
+declare
+  v_location_code varchar2(2000);
+  CURSOR emp_cursor(v_location_code varchar2) IS    
+    SELECT * FROM WM_LOCATIONU WHERE LOCATION_CODEU=v_location_code;
+  CURS_ROW emp_cursor%ROWTYPE;
+begin
+  v_location_code := '02-04-01';
+  for emp_data in emp_cursor(v_location_code)
+  LOOP
+    dbms_output.put_line(emp_data.LOCATION_CODEU);
+  END LOOP;
+end;
+/
+
+
 DECLARE    
     v_ename VARCHAR2(10);   
     v_job VARCHAR2(10);   
@@ -11,6 +29,7 @@ BEGIN
 	CLOSE emp_cursor;
 END;
 /
+
 SET SERVEROUTPUT ON  
 DECLARE    
     v_ename VARCHAR2(10);   
@@ -24,6 +43,7 @@ BEGIN
   END LOOP;
 END;
 /
+
 ----带参数游标
 SET SERVEROUTPUT ON  
 DECLARE    

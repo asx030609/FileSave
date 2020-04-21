@@ -23,6 +23,15 @@ where ((("IDU" =  SYS_GUID()) and ("LOCATION_CODEU" =  '99-99-99' )));
 SELECT SUM(TB_A.WAREHOUSE_QUANTITYU) OVER (PARTITION  by TB_A.MATCH_PALLET_CODEU) AS STORAGE_QUANTITYU, TB_B.MATCH_PALLET_CODEU, count(*) OVER (PARTITION  by TB_A.MATCH_PALLET_CODEU)
 FROM BI_MATCH_PALLET_DETAILU TB_A
 inner join BI_MATCH_PALLETU TB_B ON TB_B.MATCH_PALLET_CODEU = TB_A.MATCH_PALLET_CODEU WHERE TB_A.MATCH_PALLET_CODEU='HQQMG-1002' ORDER BY TB_A.MATCH_PALLET_CODEU DESC;
+
+----INNER JOIN的ON有好几个条件，用AND连接
+SELECT * FROM WM_MACHINE_PALLET_DETAILU TB_A
+INNER JOIN WM_MACHINE_PALLETU TB_B ON TB_B.MACHINE_CODEU = TB_A.MACHINE_CODEU and TB_A.PALLET_POSITIONU = TB_B.PALLET_POSITIONU;
+
+----查找库存中还没使用的产品编码，发现理解的妙用
+SELECT * FROM BI_PRODUCTU TB_A
+  LEFT JOIN WM_STORAGEU TB_B ON TB_B.PRODUCT_CODEU = TB_A.PRODUCT_CODEU
+  WHERE TB_B.PRODUCT_CODEU IS NULL;
 /*
 ----用户删除不了，可使用下面数据
   SELECT SID,SERIAL# FROM V$SESSION WHERE USERNAME='C##FUSION';
@@ -69,9 +78,9 @@ WHERE
 	AND a.Table_Name = c.Table_Name 
 	AND b.OWNER = d.OWNER 
 	AND b.Table_Name = d.Table_Name
-  AND a.Table_Name LIKE 'WM_REGION_DAILY_BALANCEU'
+  AND a.Table_Name LIKE '%BI_PRODUCT_UNITU%'
   --AND (c.Column_Name LIKE '%REGION_DAILY_BALANCE_IDU%' or c.Column_Name LIKE '%WAREHOUSE_DAILY_BALANCE_IDU%')  --主键列
-  AND c.CONSTRAINT_NAME LIKE 'FK_WM_REGION_DAILY__%' --外键名
+  --AND c.CONSTRAINT_NAME LIKE 'FK_WM_REGION_DAILY__%' --外键名
 	order by a.Table_Name asc;
 --*/
 
@@ -84,12 +93,18 @@ where a.index_name = b.index_name
     --or a.index_name like '%PK_EM_EQUIPMENT_TASKU%'
     and a.table_name like upper('%WM_MACHINE_CALLU%') -- in (upper('EM_EQUIPMENT_TASKU'), upper('EM_SUB_EQUIPMENTU'))
 ORDER BY a.table_name, a.index_name, a.column_position;
---
+--*/
 ------查询数据库的table
 --select * from tab;
 --select * from cat;
 --select TABLE_NAME FROM user_tables;
 
+---- 查找数据库所有表的字段信息
+SELECT * FROM SYS.ALL_TAB_COLS WHERE "OWNER" = 'C##FUSION';-- AND TABLE_NAME LIKE '%BI_PRODUCT_SIZE%';
+SELECT * FROM SYS.ALL_TAB_COLUMNS WHERE TABLE_NAME LIKE '%BI_PRODUCT_SIZE%' AND "OWNER" = 'C##FUSION';
+
+
+/*
 ----查询含某字段的所有表
 select count(table_name) from
   user_tab_cols where column_name = 'CURRENT_TASK_COUNTU' and table_name like '%TM_WORK_EQUIPMENTU%';

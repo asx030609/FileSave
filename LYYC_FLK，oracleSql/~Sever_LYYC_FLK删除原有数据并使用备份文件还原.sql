@@ -3,7 +3,8 @@
 --select * from dba_directories; --查找所有目录
 --提示用户连接错误时，如下处理
   SELECT SID,SERIAL# FROM V$SESSION WHERE USERNAME='C##FUSION';
-  alter system kill session '393,19820';
+  
+  --alter system kill session '250,10293';
 drop tablespace C##Fusion INCLUDING CONTENTS AND DATAFILES;
 drop user C##Fusion cascade;
 drop  directory C##Fusion;
@@ -20,4 +21,7 @@ grant read,write on directory C##Fusion to C##Fusion;
 --create directory mydata as 'D:\data\oracle\oradata\mydata';     --主要是给mydata/ly1.dmp文件授权，impdp才能正常运行
 --grant read,write on directory mydata to C##Fusion;
 --cmd下执行这个--注，最后不要分号；
---impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly2020.dmp 成功
+--覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly2020.dmp 成功
+--cmd下执行这个--注，最后不要分号；
+--备份***--expdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly2020.dmp 成功
+----如果有两个用户的话，还需要加什么add-exists-action，new数据库：old数据库

@@ -8,7 +8,7 @@ insert into "C##FUSION"."WM_PRODUCTION_PLANU"("PRODUCTION_PLAN_NOU", "ORIGIN_PLA
 values ( 'P202004190002' , null,  SYSDATE ,  SYSDATE+1 ,  'admin' ,  SYSDATE ,  '' , null, null,  '0' ,  '0' ,  SYSDATE ,  SYSDATE ,  SYS_GUID());
 
 insert into "C##FUSION"."WM_PRODUCTION_PLAN_DETAILU"("IDU", "PRODUCTION_PLAN_NOU", "SERIAL_NUMBERU", "TEAM_CODEU", "TEAM_NAMEU", "SHIFT_CODEU", "SHIFT_NAMEU", "MACHINE_CODEU", "MACHINE_NAMEU", "BRAND_CODEU", "BRAND_NAMEU", "ORIGIN_WORK_NOU", "PRODUCTION_PLAN_DETAIL_STATUSU", "PRODUCTION_BEGIN_TIMEU", "PRODUCTION_END_TIMEU", "CREATE_TIMEU", "UPDATE_TIMEU", "ROW_VERSIONU")
-values ( SYS_GUID(),  'P202004190002' ,  '1' ,  '1' ,  '¼×°à' , null, null,  'Z304' ,  '4#×°·âÏä»ú' ,  '166997' ,  'ºìÆìÇþ£¨ÌìÐÐ½¡£©' , null,  '0' , null, null,  SYSDATE ,  SYSDATE ,  SYS_GUID());
+values ( SYS_GUID(),  'P202004190002' ,  '1' ,  '1' ,  '¼×°à' , null, null,  'Z304' ,  '4#×°·âÏä»ú' ,  '69010281666900001' ,  'ºìÆìÇþ£¨ÌìÐÐ½¡£©' , null,  '0' , null, null,  SYSDATE ,  SYSDATE ,  SYS_GUID());
 
 update "C##FUSION"."WM_PRODUCTION_PLANU"
 set "AUDITORU" =  'admin' , "AUDIT_TIMEU" =  SYSDATE , "PRODUCTION_PLAN_STATUSU" =  '1' , "UPDATE_TIMEU" =  SYSDATE , "ROW_VERSIONU" =  SYS_GUID()
