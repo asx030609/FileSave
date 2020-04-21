@@ -55,22 +55,22 @@ SELECT to_date('2019/11/14 16:30:00', 'yyyy-mm-dd hh24:mi:ss') FROM DUAL;
 ----好像有点反方向
 SELECT
 	a.OWNER AS 外键拥有者,
-	a.Table_Name AS 外键表,
-	c.Column_Name AS 外键列,
+	a.Table_Name AS 外键引用表,
+	c.Column_Name AS 外键引用表的列,
 	b.OWNER AS 外链表拥有者,
-	b.Table_Name AS 外链表,
-	d.Column_Name AS 外链表列,
+	b.Table_Name AS 外键被引用表,
+	d.Column_Name AS 外键被引用表的列,
 	c.Constraint_Name AS 外键表约束名,
 	d.Constraint_Name AS 外链表约束名 
 FROM
 	user_Constraints a,
 	user_Constraints b,
-	user_Cons_Columns c,-- 外键表
-	user_Cons_Columns d -- 主键表
+	user_Cons_Columns c,
+	user_Cons_Columns d
 WHERE
 	a.r_Constraint_Name = b.Constraint_Name 
-	AND a.Constraint_Type = 'R' 
-	AND b.Constraint_Type = 'P' 
+	AND a.Constraint_Type = 'R' --这个相关的表的列引用另外以列的
+	AND b.Constraint_Type = 'P' --这个相关的表的列是被引用的
 	AND a.r_Owner = b.OWNER 
 	AND a.Constraint_Name = c.Constraint_Name 
 	AND b.Constraint_Name = d.Constraint_Name 
