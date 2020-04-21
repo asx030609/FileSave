@@ -54,14 +54,14 @@ SELECT to_date('2019/11/14 16:30:00', 'yyyy-mm-dd hh24:mi:ss') FROM DUAL;
 ----主要是通过user_Constraints的Constraint_Name = user_Constraints的R_CONSTRAINT_NAME
 ----好像有点反方向
 SELECT
-	a.OWNER AS 外键拥有者,
+	a.OWNER AS 外键引用表拥有者,
 	a.Table_Name AS 外键引用表,
 	c.Column_Name AS 外键引用表的列,
-	b.OWNER AS 外链表拥有者,
+	b.OWNER AS 外键被引用表拥有者,
 	b.Table_Name AS 外键被引用表,
 	d.Column_Name AS 外键被引用表的列,
-	c.Constraint_Name AS 外键表约束名,
-	d.Constraint_Name AS 外链表约束名 
+	c.Constraint_Name AS 外键引用表约束名,
+	d.Constraint_Name AS 外键被引用表约束名 
 FROM
 	user_Constraints a,
 	user_Constraints b,
