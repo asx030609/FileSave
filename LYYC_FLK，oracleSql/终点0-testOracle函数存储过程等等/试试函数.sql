@@ -1,5 +1,5 @@
 
-create or replace function f_A1
+create or replace function F_A1
 return varchar2
 is
 begin
@@ -12,7 +12,7 @@ set serveroutput on;
 declare
   v_temp varchar2(50);
 begin
-  v_temp := f_A1();
+  v_temp := F_A1();
   dbms_output.put_line(v_temp);
   commit;
   Exception when others then
@@ -20,11 +20,11 @@ begin
     raise;
 end;
 /
-drop function f_A1;
+drop function F_A1;
 
 
 
-create or replace function f_A2(V_TEMP VARCHAR2)
+create or replace function F_A2(V_TEMP VARCHAR2)
 return varchar2
 is
 begin
@@ -38,7 +38,7 @@ set serveroutput on;
 declare
   v_temp varchar2(50);
 begin
-  v_temp := f_A2('TEST');
+  v_temp := F_A2('TEST');
   dbms_output.put_line(v_temp);
   commit;
   Exception when others then
