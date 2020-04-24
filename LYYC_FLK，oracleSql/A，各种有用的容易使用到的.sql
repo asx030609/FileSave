@@ -92,6 +92,92 @@ UPDATE BI_PRODUCT_UNITU SET PRODUCT_CODEU='TEST_TEST' WHERE PRODUCT_CODEU='P0003
 ----alter table BI_PRODUCTU disable constraint PK_BI_PRODUCTU; ----ERROR：SQL 错误: ORA-02297: 无法禁用约束条件 (C##FUSION.PK_BI_PRODUCTU) - 存在相关性
 --*/
 
+/*ORACLE查询表结构
+--查询所有表名：
+select t.table_name
+from user_tables t;
+
+--查询所有字段名：
+select t.column_name
+from user_col_comments t;
+
+--查询指定表的所有字段名：
+select t.column_name
+from user_col_comments t
+where t.table_name = 'BIZ_DICT_XB';
+
+--查询指定表的所有字段名和字段说明：
+select t.column_name, t.column_name
+from user_col_comments t
+where t.table_name = 'BIZ_DICT_XB';
+
+--查询所有表的表名和表说明：
+select t.table_name, f.comments
+from user_tables t inner join user_tab_comments f on t.table_name = f.table_name;
+
+--查询模糊表名的表名和表说明：
+select t.table_name
+from user_tables t
+where t.table_name like 'BIZ_DICT%';
+
+select t.table_name, f.comments
+from user_tables t inner join user_tab_comments f on t.table_name = f.table_name
+where t.table_name like 'BIZ_DICT%';
+
+
+--查询表的数据条数、表名、中文表名
+select a.num_rows, a.TABLE_NAME, b.COMMENTS
+from user_tables a, user_tab_comments b
+WHERE a.TABLE_NAME = b.TABLE_NAME
+order by TABLE_NAME;
+
+--查询表基本信息
+select
+    utc.table_name,utc.column_name,utc.data_type,utc.data_length,utc.data_precision,
+    utc.data_Scale,utc.nullable,utc.data_default,ucc.comments
+from
+    user_tab_columns utc,user_col_comments ucc
+where
+    utc.table_name = ucc.table_name
+    and utc.column_name = ucc.column_name
+    --and utc.table_name = 'BBSDETAIL'
+order by
+      utc.table_name,column_id;
+	
+--查询主键	
+select a.constraint_name,  a.column_name 
+from user_cons_columns a, user_constraints b 
+where a.constraint_name = b.constraint_name 
+and b.constraint_type = 'P' and a.table_name = '大写的表名'
+
+--查询外键
+select a.constraint_name,  a.column_name 
+from user_cons_columns a, user_constraints b 
+where a.constraint_name = b.constraint_name 
+and b.constraint_type = 'R' and a.table_name = '大写的表名'
+
+--查询索引
+select * from user_indexes
+order by table_name;
+
+--查询视图
+select * from user_views;
+
+--查询触发器
+select * from USER_TRIGGERS
+order by table_name;
+
+--查询资源
+SELECT * FROM  USER_PROCEDURES
+order by object_name;
+	  
+--查询指定用户下的所有表	  
+select * from all_tables where owner='TEST'；
+
+--查看当前登录的用户的表
+ select table_name from user_tables;	  
+
+--*/
 /*
 ----查询某表的所有索引
 SELECT 
