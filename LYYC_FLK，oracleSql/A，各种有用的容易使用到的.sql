@@ -78,7 +78,7 @@ WHERE
 	AND a.Table_Name = c.Table_Name 
 	AND b.OWNER = d.OWNER 
 	AND b.Table_Name = d.Table_Name
-  AND a.Table_Name LIKE '%BI_PRODUCT_UNITU%'
+  AND (b.Table_Name LIKE '%BI_PRODUCTU%' or a.Table_Name LIKE '%BI_PRODUCTU%') ----有关于表BI_PRODUCTU的主外键
   --AND (c.Column_Name LIKE '%REGION_DAILY_BALANCE_IDU%' or c.Column_Name LIKE '%WAREHOUSE_DAILY_BALANCE_IDU%')  --主键列
   --AND c.CONSTRAINT_NAME LIKE 'FK_WM_REGION_DAILY__%' --外键名
 	order by a.Table_Name asc;
