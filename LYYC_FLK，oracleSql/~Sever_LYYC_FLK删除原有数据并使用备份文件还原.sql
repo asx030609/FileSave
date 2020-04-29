@@ -4,7 +4,7 @@
 --提示用户连接错误时，如下处理
   SELECT SID,SERIAL# FROM V$SESSION WHERE USERNAME='C##FUSION';
   
-  --alter system kill session '250,10293';
+  alter system kill session '139,44334';
 drop tablespace C##Fusion INCLUDING CONTENTS AND DATAFILES;
 drop user C##Fusion cascade;
 drop  directory C##Fusion;
@@ -58,10 +58,12 @@ grant read,write on directory Dir_C##Fusion to C##Fusion;
 --还原
 ----imp C##Fusion/admin123456COM@127.0.0.1/orcl file=d:\Fusion.dmp full=y 成功
 
+-----》》》》》正在使用的备份还原数据库
 --create directory mydata as 'D:\data\oracle\oradata\mydata';     --主要是给mydata/ly1.dmp文件授权，impdp才能正常运行
 --grant read,write on directory mydata to C##Fusion;
 --cmd下执行这个--注，最后不要分号；
---覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=Dir_C##Fusion dumpfile=ly2020.dmp logfile=impdp20200429.log (成功)
+--覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=Dir_C##Fusion dumpfile=ly20200428001.dmp logfile=impdp20200429001.log (成功)
+--覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly20200428001.dmp logfile=impdp202004291442.log (成功)
 --cmd下执行这个--注，最后不要分号；
 --备份***--expdp C##Fusion/admin123456COM@orcl directory=Dir_C##Fusion dumpfile=ly2020.dmp 成功
 ----如果有两个用户的话，还需要加什么add-exists-action，new数据库：old数据库
@@ -75,9 +77,9 @@ grant read,write on directory Dir_C##Fusion to C##Fusion;
 --还原指定表
 --cmd中--impdp C##Fusion/admin123456COM directory=C##Fusion dumpfile=ly_tb_20200429.dmp logfile=impdp.log tables=(DMT_TAGU); --2020-4-29 10:00:31出现错误ORA-39166: Object C##FUSION.; was not found or could not be exported or imported.
 
---导出指定表，最后不用加分号
---exp C##FUSION/admin123456COM@localhost/orcl file=D:\workspace\Data\Fusion\Fusion_tagu.dmp tables=(DMT_TAGU) log=D:\workspace\Data\Fusion\exp20200429.log (成功)
+--导出指定表，最后不用加分号(正在使用)
+--exp C##FUSION/admin123456COM@localhost/orcl file=D:\workspace\Data\Fusion\Fusion_tagu.dmp tables=(BI_UNITU,BI_PRODUCTU,BI_PRODUCT_BARCODEU,BI_PRODUCT_SIZEU,BI_PRODUCT_UNITU) log=D:\workspace\Data\Fusion\exp20200429.log (成功)
 --导入指定表   IGNORE=Y忽略创建错误 (N)
---imp C##FUSION/admin123456COM@localhost/orcl file=D:\workspace\Data\Fusion\Fusion_tagu.dmp tables=(DMT_TAGU) log=D:\workspace\Data\Fusion\imp20200429.log DESTROY=Y IGNORE=Y （成功）
+--imp C##FUSION/admin123456COM@localhost/orcl file=D:\workspace\Data\Fusion\Fusion_tagu.dmp tables=(BI_UNITU,BI_PRODUCTU,BI_PRODUCT_BARCODEU,BI_PRODUCT_SIZEU,BI_PRODUCT_UNITU) log=D:\workspace\Data\Fusion\imp20200429.log DESTROY=Y IGNORE=Y （成功）
 
 ----////

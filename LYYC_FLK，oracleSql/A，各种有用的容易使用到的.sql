@@ -92,7 +92,7 @@ UPDATE BI_PRODUCT_UNITU SET PRODUCT_CODEU='TEST_TEST' WHERE PRODUCT_CODEU='P0003
 ----alter table BI_PRODUCTU disable constraint PK_BI_PRODUCTU; ----ERROR：SQL 错误: ORA-02297: 无法禁用约束条件 (C##FUSION.PK_BI_PRODUCTU) - 存在相关性
 --*/
 
-/*ORACLE查询表结构
+--/*ORACLE查询表结构
 --查询所有表名：
 select t.table_name
 from user_tables t;
@@ -118,7 +118,7 @@ from user_tables t inner join user_tab_comments f on t.table_name = f.table_name
 --查询模糊表名的表名和表说明：
 select t.table_name
 from user_tables t
-where t.table_name like 'BIZ_DICT%';
+where t.table_name like '%CARGO%';
 
 select t.table_name, f.comments
 from user_tables t inner join user_tab_comments f on t.table_name = f.table_name
