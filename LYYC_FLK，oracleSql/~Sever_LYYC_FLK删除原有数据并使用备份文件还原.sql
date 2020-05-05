@@ -4,7 +4,7 @@
 --提示用户连接错误时，如下处理
   SELECT SID,SERIAL# FROM V$SESSION WHERE USERNAME='C##FUSION';
   
-  alter system kill session '139,44334';
+  alter system kill session '266,30139';
 drop tablespace C##Fusion INCLUDING CONTENTS AND DATAFILES;
 drop user C##Fusion cascade;
 drop  directory C##Fusion;
@@ -63,7 +63,7 @@ grant read,write on directory Dir_C##Fusion to C##Fusion;
 --grant read,write on directory mydata to C##Fusion;
 --cmd下执行这个--注，最后不要分号；
 --覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=Dir_C##Fusion dumpfile=ly20200428001.dmp logfile=impdp20200429001.log (成功)
---覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly20200428001.dmp logfile=impdp202004291442.log (成功)
+--覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly20200505001.dmp logfile=impdp20200505.log (成功)
 --cmd下执行这个--注，最后不要分号；
 --备份***--expdp C##Fusion/admin123456COM@orcl directory=Dir_C##Fusion dumpfile=ly2020.dmp 成功
 ----如果有两个用户的话，还需要加什么add-exists-action，new数据库：old数据库
