@@ -4,7 +4,8 @@
 --提示用户连接错误时，如下处理
   SELECT SID,SERIAL# FROM V$SESSION WHERE USERNAME='C##FUSION';
   
-  alter system kill session '266,30139';
+  alter system kill session '4,60533';
+  alter system kill session '134,22863';
 drop tablespace C##Fusion INCLUDING CONTENTS AND DATAFILES;
 drop user C##Fusion cascade;
 drop  directory C##Fusion;
