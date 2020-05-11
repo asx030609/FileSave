@@ -13,9 +13,11 @@ SELECT COLUMN_NAME, NUM_DISTINCT, LOW_VALUE, HIGH_VALUE, DENSITY , NUM_NULLS , A
 SELECT * FROM (SELECT * FROM WM_PALLETU WHERE IDU NOT IN (SELECT PALLET_IDU FROM WM_STORAGEU) AND LENGTH(LOCATION_CODEU)=8 ORDER BY LOCATION_CODEU DESC) WHERE ROWNUM=1;
 
 ----////查询表中某字段不一样的所有唯一记录
-SELECT * FROM WM_MACHINE_HANDOVER_DETAILU WHERE IDU IN (
+--SELECT TB_B.TRANSFER_BILL_NOU, COUNT(TB_B.TRANSFER_BILL_NOU)
+SELECT * FROM WM_MACHINE_HANDOVER_DETAILU TB_B WHERE TB_B.IDU IN (
 SELECT IDU FROM (
-SELECT DISTINCT(TRANSFER_BILL_NOU), IDU, TRANSFER_QUANTITYU FROM WM_MACHINE_HANDOVER_DETAILU WHERE TRANSFER_QUANTITYU=0 ORDER BY CREATE_TIMEU DESC)); --IDU是表中唯一的
+SELECT TB_A.IDU, TRANSFER_BILL_NOU, row_number() over (PARTITION BY TB_A.TRANSFER_BILL_NOU ORDER BY TRANSFER_BILL_NOU DESC)  V_ROWNUM FROM WM_MACHINE_HANDOVER_DETAILU TB_A WHERE TRANSFER_QUANTITYU=0
+) WHERE V_ROWNUM = 1); --GROUP BY TB_B.TRANSFER_BILL_NOU; --IDU是表中唯一的
 
 
 ---////同时更新某数据表的几列
@@ -154,13 +156,13 @@ order by
 select a.constraint_name,  a.column_name 
 from user_cons_columns a, user_constraints b 
 where a.constraint_name = b.constraint_name 
-and b.constraint_type = 'P' and a.table_name = '大写的表名'
+and b.constraint_type = 'P' and a.table_name = '大写的表名';
 
 --查询外键
 select a.constraint_name,  a.column_name 
 from user_cons_columns a, user_constraints b 
 where a.constraint_name = b.constraint_name 
-and b.constraint_type = 'R' and a.table_name = '大写的表名'
+and b.constraint_type = 'R' and a.table_name = '大写的表名';
 
 --查询索引
 select * from user_indexes
@@ -178,7 +180,7 @@ SELECT * FROM  USER_PROCEDURES
 order by object_name;
 	  
 --查询指定用户下的所有表	  
-select * from all_tables where owner='TEST'；
+select * from all_tables where owner='TEST';
 
 --查看当前登录的用户的表
  select table_name from user_tables;	  
