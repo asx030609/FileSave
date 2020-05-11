@@ -55,6 +55,7 @@ grant read,write on directory Dir_C##Fusion to C##Fusion;
 ----////备份还原数据库
 --备份
 ----exp C##Fusion/admin123456COM@172.30.20.57/orcl file=D:\Fusion20191124.dmp full=y 成功
+----exp C##Fusion/admin123456COM@localhost/orcl file=D:\Fusion20200511001.dmp full=y 成功
 --还原
 ----imp C##Fusion/admin123456COM@127.0.0.1/orcl file=d:\Fusion.dmp full=y 成功
 
