@@ -2,10 +2,10 @@
 --/*
 --select * from dba_directories; --查找所有目录
 --提示用户连接错误时，如下处理
-  SELECT SID,SERIAL# FROM V$SESSION WHERE USERNAME='C##FUSION';
+  SELECT 'alter system kill session '''|| SID||','||SERIAL#||''';' FROM V$SESSION WHERE USERNAME='C##FUSION';
+  alter system kill session '143,42146';
+  --alter system kill session '394,45115';
   
-  alter system kill session '4,11308';
-  alter system kill session '743,7412';
 drop tablespace C##Fusion INCLUDING CONTENTS AND DATAFILES;
 drop user C##Fusion cascade;
 drop  directory C##Fusion;
