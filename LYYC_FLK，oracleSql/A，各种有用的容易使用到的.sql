@@ -19,6 +19,13 @@ SELECT IDU FROM (
 SELECT TB_A.IDU, TRANSFER_BILL_NOU, row_number() over (PARTITION BY TB_A.TRANSFER_BILL_NOU ORDER BY TRANSFER_BILL_NOU DESC)  V_ROWNUM FROM WM_MACHINE_HANDOVER_DETAILU TB_A WHERE TRANSFER_QUANTITYU=0 --IDU是表中唯一的
 ) WHERE V_ROWNUM = 1); --GROUP BY TB_B.TRANSFER_BILL_NOU;
 
+----////使得DISTINCT 只对其中某一项生效
+----利用 group_concat 函数
+SELECT group_concat(UNIT_TYPEU), UNIT_NAMEU FROM BI_PRODUCT_UNITU GROUP BY UNIT_TYPEU; --（oracle上错误，只对sqlserver有效吧）
+----利用group by (我认为第一种方法 其实就是 第二种方法, 第一种方法也就是第二种方法)
+SELECT UNIT_TYPEU, UNIT_NAMEU FROM BI_PRODUCT_UNITU GROUP BY UNIT_TYPEU; --（oracle上错误，只对sqlserver有效吧）
+SELECT DISTINCT UNIT_TYPEU, UNIT_NAMEU, PRODUCT_CODEU FROM BI_PRODUCT_UNITU ORDER BY PRODUCT_CODEU; --(这行没错，但没达到效果)
+
 
 ---////同时更新某数据表的几列
   update "C##FUSION"."WM_PALLETU"
@@ -110,9 +117,7 @@ select t.column_name
 from user_col_comments t;
 
 --查询指定表的所有字段名：
-select t.column_name
-from user_col_comments t
-where t.table_name = 'BIZ_DICT_XB';
+select t.column_name from user_col_comments t where t.table_name = 'BIZ_DICT_XB';
 
 --查询指定表的所有字段名和字段说明：
 select t.column_name, t.column_name
@@ -235,14 +240,6 @@ where i.index_name = c.index_name
   and i.table_name='WM_PRODUCT_DAILY_BALANCE_HISTORYU';
 --*/
 
----- 删除数据库(用户) --> 
---drop user c##fusion cascade;
----- 创建表空间 -->
--- create tablespace casic_smart datafile 'e:\oracle\product\10.2.0\oradata\orcl\casic_smart.dbf' size 1000m;
----- 创建用户,并指定表空间 --> -- 有些是没有指定表空间的,不知是否可行,未尝试,保险起见还是按下面方式来 --> 
---create user c##fusion identified by admin123456COM default tablespace casic_smart quota 500m on users;
--- 授予权限 --> 
---grant all privileges to c##fusion ;
 
 --学习如何使用oracle上有的sql命令。
 --select tablespace_name,file_name from dba_data_files;
@@ -250,17 +247,6 @@ where i.index_name = c.index_name
 --select b.file_name 物理文件名,b.tablespace_name 表空间,b.bytes/1024/1024 大小M,(b.bytes-sum(nvl(a.bytes,0)))/1024/1024 已使用M,substr((b.bytes-sum(nvl(a.bytes,0)))/(b.bytes)*100,1,5) 利用率 from
 --dba_free_space a,dba_data_files b where a.file_id=b.file_id group by b.tablespace_name,b.file_name,b.bytes order by b.tablespace_name;
 --select tablespace_name,file_name from dba_temp_files; --查询临时表空间
---use [Fusion_LuoYangFLK]
---delete from WM_WAREHOUSE;
---set serveroutput on;
---declare Guid_1 varchar2(100):= SYS_GUID();
---begin
--- dbms_output.put_line('hello world');
--- dbms_output.put_line(sysdate);
--- dbms_output.put_line(firstGuid);
---end;
-
---      Insert into C##FUSION.SYS_USERU (IDU,USER_NAMEU,PASSWORDU,NAMEU,ACTIVEU,DESCRIPTIONU,CREATE_TIMEU,UPDATE_TIMEU,ROW_VERSIONU) values (SYS_GUID(),v_Name,v_Name,null,1,null,sysdate,sysdate,SYS_GUID());
 
 
 ----创建临时表并使用

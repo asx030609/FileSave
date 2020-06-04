@@ -56,10 +56,10 @@ SET SERVEROUTPUT ON;
 Declare
   ret varchar2(20);
 Begin
-  dbms_output.put_line('返回值：'||F_01('HQQTXJ-2001'));
-  dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
-  dbms_output.put_line('返回值：'||F_01('HQQTXJ-2001'));
-  dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
+  dbms_output.put_line('返回值：'||F_01('HJYYDH-1003'));
+  --dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
+  --dbms_output.put_line('返回值：'||F_01('HQQTXJ-2001'));
+  --dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
   COMMIT WORK;
 EXCEPTION
 WHEN OTHERS THEN
