@@ -56,11 +56,23 @@ SELECT * FROM BI_PRODUCTU TB_A
 
  
  
-/*
-----oracle中如何转换时间？
+--/*
+----oracle中如何转换时间？对比时间？
 SELECT TO_CHAR(SYSDATE, 'yy-mm-dd hh24:mi:ss') FROM DUAL;
 SELECT TO_CHAR(SYSDATE, 'yymmddhh24miss') FROM DUAL;
 SELECT to_date('2019/11/14 16:30:00', 'yyyy-mm-dd hh24:mi:ss') FROM DUAL;
+ select sysdate,add_months(sysdate,-12) from dual;        --减1年
+ select sysdate,add_months(sysdate,-1) from dual;        --减1月
+ select sysdate,to_char(sysdate-7,'yyyy-mm-dd HH24:MI:SS') from dual;   --减1星期
+ select sysdate,to_char(sysdate-1,'yyyy-mm-dd HH24:MI:SS') from dual;   --减1天
+ select sysdate,to_char(sysdate-1/24,'yyyy-mm-dd HH24:MI:SS') from dual;  --减1小时
+ select sysdate,to_char(sysdate-1/24/60,'yyyy-mm-dd HH24:MI:SS') from dual;  --减1分钟
+ select sysdate,to_char(sysdate-1/24/60/60,'yyyy-mm-dd HH24:MI:SS') from dual;  --减1秒
+ ----同理，加的话，变减号为加号就好了，如加一个月
+ select sysdate,add_months(sysdate,1) from dual;        --加1月
+ ----//比对时间
+ select * from TM_TASKU where CREATE_TIMEU <= to_date('2020-09-07 00:00:00','yyyy-mm-dd hh24:mi:ss');
+ select * from TM_TASKU where CREATE_TIMEU <= add_months(sysdate,-1);
 --*/
 
 
