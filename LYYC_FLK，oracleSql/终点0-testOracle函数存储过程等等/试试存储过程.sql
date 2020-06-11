@@ -1,4 +1,3 @@
-
 create or replace procedure pro_test
 (sex IN VARCHAR2, V_RESULT OUT VARCHAR2)
 AS
@@ -25,6 +24,13 @@ BEGIN
   Exception when others then
     rollback;
     raise;
+END;
+/
+create or replace procedure pro_test
+AS
+  countNum number(10);
+BEGIN
+  UPDATE WM_REGIONU SET DISPLAY_ORDERU=DISPLAY_ORDERU+1;
 END;
 
 
