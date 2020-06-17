@@ -2,6 +2,7 @@
  \FileZilla_3.12.0.2_win32-setup.exe
  \HskDDNS_3.6.0.24530.exe
  \Newtonsoft.Json.rar
+ \python364.chm
  \QRCODE.rar
  \tcping.exe
  \ue_chinese_24.10.0.24.exe
@@ -41,6 +42,7 @@
  \BridgeVirtualMachine\Temp\AccountManager.exe
  \BridgeVirtualMachine\Temp\InitWmsConfig.exe
  \BridgeVirtualMachine\Temp\setup.exe
+ \CE link VS2008\C#开发wince嵌入式应用程序入门VS2005.pdf
  \CE link VS2008\CE5.0DeviceEmulatorSetup.exe
  \CE link VS2008\DevEmul_SDK.part1.rar
  \CE link VS2008\DevEmul_SDK.part2.rar
@@ -70,6 +72,7 @@
  \CODE\MyOpaqueLayer1.rar
  \CODE\resume.rar
  \CODE\SMSC(同步网络版).rar
+ \CODE\SQL_Server_2008完整+差异备份及还原实战.pdf
  \CODE\test-installShield-2015-0516-2232.rar
  \CODE\TestLog4Net.zip
  \Crystal for VS2010\CRforVS_redist_install_32bit_13_0.zip
@@ -164,6 +167,8 @@
  \SqlDatabase\oracle11gr1-win64server-32client-111070\instantclient-basic-win-x86-64-11.1.0.7.0.zip
  \SqlDatabase\oracle11gr1-win64server-32client-111070\oracle11gr1-client-32bit.iso
  \SqlDatabase\oracle11gr1-win64server-32client-111070\oracle11gr1-win64.iso
+ \SqlDatabase\oracle11gr1-win64server-32client-111070\orapwd文件使用方法.docx
+ \SqlDatabase\oracle11gr1-win64server-32client-111070\忘记oracle的sys用户密码处理办法.docx
  \thok应用程序\DevExpressUniversalTrialComplete-20170802.exe
  \thok应用程序\IBM Data Server Driver Package.msi
  \thok应用程序\Ice-3.6.2.msi
@@ -704,7 +709,17 @@
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\WindowsInstaller-KB893803-x86.exe
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\wininst.exe
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\WMI_0000.cab
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\cs_CZ\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\da_DK\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\de_DE\wininst.chm
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\debug\db2xprt.exe
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\en_US\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\es_ES\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\fi_FI\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\fr_FR\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\it_IT\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\ja_JP\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\ko_KR\wininst.chm
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\launchpad\callback.bat
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\launchpad\changeDirectory.bat
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\launchpad\debug_reg_values.bat
@@ -801,16 +816,24 @@
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\launchpad\zh\codepages\437\noBrowser.txt
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\launchpad\zh_TW\noBrowser.txt
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\launchpad\zh_TW\codepages\437\noBrowser.txt
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\no_NO\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\pl_PL\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\pt_BR\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\ru_RU\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\sv_SE\wininst.chm
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\utilities\cpysetup.bat
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\utilities\db2ckupgrade.exe
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\utilities\db2schex.exe
  \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\utilities\db2iprune\db2iprune.exe
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\zh_CN\wininst.chm
+ \thok应用程序\DB2\v11.1_win64_expc\EXPC\image\db2\Windows\zh_TW\wininst.chm
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\FAQ.de.txt
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\faq.txt
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\vcwinmake.bat
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\winmake.bat
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\contributions\LotTrack-103.zip
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\contributions\PowerBasic\Dave.exe
+ \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\DelphiComponent\NoDaveComponent.pdf
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\DelphiComponent\Demo\NoDaveDemo.exe
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\Dot.NET\mono.bat
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\Dot.NET\MSnet.bat
@@ -835,6 +858,11 @@
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\win\testPPI_IBHload.exe
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\win\testPPIload.exe
  \thok应用程序\libnodave-0.8.5.tar\libnodave-0.8.5\win\testS7online.exe
+ \thok应用程序\Siemens SimaticV8.2\doc\alarm ase.pdf
+ \thok应用程序\Siemens SimaticV8.2\doc\Betriebsanleitung_SOFTNET-IE_RNA.pdf
+ \thok应用程序\Siemens SimaticV8.2\doc\Installation_dt.pdf
+ \thok应用程序\Siemens SimaticV8.2\doc\Installation_en.pdf
+ \thok应用程序\Siemens SimaticV8.2\doc\Installation_zh.pdf
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\1\filelist.txt
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\1\1\filelist.txt
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\1\10\filelist.txt
@@ -854,10 +882,14 @@
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\1\8\filelist.txt
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\1\9\filelist.txt
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\1\filelist.txt
+ \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\1\1\BA_S7-1200-CSM1277_52.pdf
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\1\1\filelist.txt
+ \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\1\2\BA_Industrial Ethernet S7-300 CSM377_52.pdf
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\1\2\filelist.txt
+ \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\1\2\MN_S7-300-CSM377_52.pdf
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\1\3\filelist.txt
  \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\10\filelist.txt
+ \thok应用程序\Siemens SimaticV8.2\doc\ManColl\Chinese\1\2\11\1\1\BAK_MM900-SCALANCE-XR-500M_52.pdf
  \thok应用程序\smartgit-win32-setup-jre-17_1_0\changelog.txt
  \thok应用程序\smartgit-win32-setup-jre-17_1_0\setup-17_1_0-jre.exe
  \thok应用程序\VPN\openvpn-install-2.3.14-I601-x86_64.exe
@@ -865,7 +897,10 @@
  \thok应用程序\VPN\SecureCRT4768.zip
  \thok应用程序\VPN\TeamViewer_Setup.exe
  \thok应用程序\VPN\LYYC_VPN\EasyConnectInstaller.exe
+ \thok应用程序\VPN\LYYC_VPN\VPN帐户策略清单.xlsx
+ \thok应用程序\VPN\LYYC_VPN\洛阳厂VPN登陆步骤.docx
  \thok应用程序\VPN\LYYC_VPN\账号密码.txt
+ \thok应用程序\ZeroC\ICE3.4.2 使用.docx
  \thok应用程序\ZeroC\Ice-3.4.2.msi
  \thok应用程序\ZeroC\Ice-3.7.0\Ice-3.7.0.msi
  \thok应用程序\ZeroC\Ice-3.7.0\IceBuilder.vsix
@@ -915,6 +950,7 @@
  \水晶报表设计软件\说明（含序列号）.txt
  \水晶报表设计软件\Crystal plugin for 2010\CRforVS_redist_install_32bit_13_0.zip
  \水晶报表设计软件\Crystal plugin for 2010\CRforVS_redist_install_64bit_13_0.zip
+ \调试工具\SoapUI-5.0.0.rar
  \调试工具\WebService调试工具\Storm_r1.1-Adarna\license.txt
  \调试工具\WebService调试工具\Storm_r1.1-Adarna\QUICK Instructions.txt
  \调试工具\WebService调试工具\Storm_r1.1-Adarna\Release notes_Storm_r1.1-Adarna.txt
@@ -925,6 +961,7 @@
  \余_code\C#Winform的textbox不能输入汉字的解决方法大全.txt
  \余_code\SQL Server数据库备份与恢复.rar
  \余_code\SQL Server数据库备份与恢复注意事项.txt
+ \余_code\水晶报表心得.pdf
  \余_code\SQL Server数据库备份与恢复\Test_BackUp\Test_BackUp\bin\Debug\Test_BackUp.exe
  \余_code\SQL Server数据库备份与恢复\Test_BackUp\Test_BackUp\bin\Debug\Test_BackUp.vshost.exe
  \余_code\SQL Server数据库备份与恢复\Test_BackUp\Test_BackUp\bin\Release\Test_BackUp.exe
@@ -941,6 +978,7 @@
  \余_娱乐\聊天\WeChat_C1003.exe
  \余_娱乐\聊天\WeChatSetup.exe
  \余_娱乐\录像直接运行版\FSCapture_gr\FSCapture.exe
+ \余_娱乐\录像直接运行版\FSCapture_gr\FSCaptureHelp.chm
  \余_娱乐\录像直接运行版\FSCapture_gr\FSCrossHair.exe
  \余_娱乐\录像直接运行版\FSCapture_gr\FSRecorder.exe
  \余_娱乐\录像直接运行版\FSCapture_gr\LicenseAgreement.txt
@@ -1009,6 +1047,9 @@
  \远程连接工具\XT800远程Setup_p.exe
  \远程连接工具\连接Linux工具MobaXterm_Installer_v12.0.zip
  \远程连接工具\LYYC_VPN\EasyConnectInstaller.exe
+ \远程连接工具\LYYC_VPN\VPN帐户策略清单.xlsx
+ \远程连接工具\LYYC_VPN\洛阳厂VPN登陆步骤.docx
+ \远程连接工具\LYYC_VPN\洛阳厂VPN登陆步骤更新20200529.docx
  \远程连接工具\LYYC_VPN\账号密码.txt
  \远程连接工具\thok用的\TeamViewer_Setup.exe
  \远程连接工具\和MES对接用过\SoapUI-5.0.0.rar
