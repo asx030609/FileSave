@@ -2,6 +2,7 @@
 create or replace function F_A1
 return varchar2
 is
+    V_TEMP VARCHAR2(500); ----也可不定义变量
 begin
   return '^_^';
   Exception when others then
@@ -23,10 +24,11 @@ end;
 drop function F_A1;
 
 
-
+----带参数函数
 create or replace function F_A2(V_TEMP VARCHAR2)
 return varchar2
 is
+    V_TEMP01 VARCHAR2(500); 
 begin
   --
   return V_TEMP;
