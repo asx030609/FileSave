@@ -35,3 +35,4 @@ end;
 /
 --*/
 --SELECT * FROM WM_LOCATIONU;
+
