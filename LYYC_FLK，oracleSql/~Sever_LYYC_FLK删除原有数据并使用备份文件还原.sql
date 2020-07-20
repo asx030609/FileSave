@@ -33,7 +33,7 @@ grant read,write on directory C##Fusion to C##Fusion;
 --4、对于10g以上的服务器，使用exp通常不能导出0行数据的空表，而此时必须使用expdp导出。
 
 -----》》》》》正在使用的备份还原数据库
---（正在使用）覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly20200708001.dmp (成功)
+--（正在使用）覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly2020.dmp (成功)
 --（正在使用）备份***--expdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly2020.dmp 成功
 
 
