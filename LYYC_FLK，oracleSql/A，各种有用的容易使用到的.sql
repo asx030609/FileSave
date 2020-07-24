@@ -11,6 +11,21 @@ SELECT LOCATION_STATUSU, LISTAGG(LOCATION_CODEU, ' ') WITHIN GROUP(order by LOCA
 --*/
 
 
+---- 查找数据库所有表的字段信息
+SELECT * FROM SYS.ALL_TAB_COLS WHERE "OWNER" = 'C##FUSION';-- AND TABLE_NAME LIKE '%BI_PRODUCT_SIZE%';
+SELECT * FROM SYS.ALL_TAB_COLUMNS WHERE TABLE_NAME LIKE '%BI_PRODUCT_SIZE%' AND "OWNER" = 'C##FUSION';
+
+
+/*
+----查询含某字段的所有表
+select count(table_name) from
+  user_tab_cols where column_name = 'CURRENT_TASK_COUNTU' and table_name like '%TM_WORK_EQUIPMENTU%';
+  
+--select * from USER_TABS;
+SELECT * FROM USER_TAB_COLS WHERE TABLE_NAME LIKE '%Parameter%';
+*/
+
+
 ----//////在输入时候就可以输入替换符，查找这个表单的非空列信息       
 SELECT COLUMN_NAME, NUM_DISTINCT, LOW_VALUE, HIGH_VALUE, DENSITY , NUM_NULLS , AVG_COL_LEN , HISTOGRAM, NUM_BUCKETS  FROM DBA_TAB_COL_STATISTICS WHERE TABLE_NAME = '&TABLE_NAME' AND LOW_VALUE IS NOT NULL;
 
@@ -205,20 +220,6 @@ ORDER BY a.table_name, a.index_name, a.column_position;
 --select * from tab;
 --select * from cat;
 --select TABLE_NAME FROM user_tables;
-
----- 查找数据库所有表的字段信息
-SELECT * FROM SYS.ALL_TAB_COLS WHERE "OWNER" = 'C##FUSION';-- AND TABLE_NAME LIKE '%BI_PRODUCT_SIZE%';
-SELECT * FROM SYS.ALL_TAB_COLUMNS WHERE TABLE_NAME LIKE '%BI_PRODUCT_SIZE%' AND "OWNER" = 'C##FUSION';
-
-
-/*
-----查询含某字段的所有表
-select count(table_name) from
-  user_tab_cols where column_name = 'CURRENT_TASK_COUNTU' and table_name like '%TM_WORK_EQUIPMENTU%';
-  
---select * from USER_TABS;
-SELECT * FROM USER_TAB_COLS WHERE TABLE_NAME LIKE '%Parameter%';
-*/
 
 /*
 ----》查看oracle中表的索引
