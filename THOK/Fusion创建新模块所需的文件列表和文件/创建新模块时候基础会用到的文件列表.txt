@@ -1,0 +1,33 @@
+src/Application/Fusion.Context.Warehouse.Application/Models/Bill/ManualMaterialBills/ManualMaterialBillDetailModel.cs
+src/Application/Fusion.Context.Warehouse.Application/Models/Bill/ManualMaterialBills/ManualMaterialBillModel.cs
+src/Application/Fusion.Context.Warehouse.Application/Models/Configuration/Bill/ManualMaterialBills/ManualMaterialBillDetailProfile.cs
+src/Application/Fusion.Context.Warehouse.Application/Models/Configuration/Bill/ManualMaterialBills/ManualMaterialBillProfile.cs
+src/Application/Fusion.Context.Warehouse.Application/Services/Bill/ManualMaterialBillService.cs
+src/Application/Fusion.Context.Warehouse.Application/Services/Interfaces/Bill/IManualMaterialBillService.cs
+src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBill.cs
+src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBillDetail.cs
+src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBillDetailStatus.cs
+src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBillStatus.cs
+src/Domain/Fusion.Context.Warehouse.Domain/Repositories/Bill/IManualMaterialBillRepository.cs
+src/Domain/Fusion.Context.Warehouse.Domain/Repositories/Bill/IManualMaterialRepository.cs
+src/Infrastructure/Fusion.Infrastructure.Mapping.Warehouse/Models/Bill/ManualMaterialBills/ManualMaterialBillDetailMap.cs
+src/Infrastructure/Fusion.Infrastructure.Mapping.Warehouse/Models/Bill/ManualMaterialBills/ManualMaterialBillMap.cs
+src/Infrastructure/Fusion.Infrastructure.Repository.Warehouse/Repositories/Bill/ManualMaterialBillRepository.cs
+src/User Interface/Fusion.WebApi.Warehouse/Controllers/Bill/ManualMaterialBillController.cs
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/model/Bill/ManualMaterialBills/ManualMaterialBillDetailModel.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/model/Bill/ManualMaterialBills/ManualMaterialBillModel.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/store/Bill/ManualMaterialBills/ManualMaterialBillDetailStore.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/store/Bill/ManualMaterialBills/ManualMaterialBillStore.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/FindManualMaterialBill.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBill.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillContainer.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillController.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/AddManualMaterialBillDetail.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/FindManualMaterialBillDetail.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/ManualMaterialBillDetail.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/ManualMaterialBillDetailController.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/ManualMaterialBillDetailToolbar.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/ModifyManualMaterialBillDetail.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillModel.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillToolbar.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ModifyManualMaterialBill.js
