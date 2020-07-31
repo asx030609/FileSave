@@ -1,0 +1,97 @@
+加号代表是新添加的内容
+
+
+
+================
+commit d4231574cd48a6c59e21d7be12f7d0d8654adf51
+Author: wuzuqiang <zuqiang_wu@skyseaok.com>
+Date:   Sat Aug 1 07:42:38 2020 +0800
+
+    111
+
+diff --git a/src/Application/Fusion.Context.Warehouse.Application/Fusion.Context.Warehouse.Application.csproj b/src/Application/Fusion.Context.Warehouse.Application/Fusion.Context.Warehouse.Application.csproj
+index 15486ab..ebe8e51 100644
+--- a/src/Application/Fusion.Context.Warehouse.Application/Fusion.Context.Warehouse.Application.csproj
++++ b/src/Application/Fusion.Context.Warehouse.Application/Fusion.Context.Warehouse.Application.csproj
+@@ -237,6 +237,8 @@
+     <Compile Include="Models\Bill\InventoryBills\PreviewModel.cs" />
+     <Compile Include="Models\Bill\KeepAccountBills\KeepAccountBillModel.cs" />
+     <Compile Include="Models\Bill\KeepAccountBills\KeepAccountBillDetailModel.cs" />
++    <Compile Include="Models\Bill\ManualMaterialBills\ManualMaterialBillDetailModel.cs" />
++    <Compile Include="Models\Bill\ManualMaterialBills\ManualMaterialBillModel.cs" />
+     <Compile Include="Models\Bill\MatchPalletPlans\MatchPalletScanModel.cs" />
+     <Compile Include="Models\Bill\ProductionPlans\ProductionPlanDetailModel.cs" />
+     <Compile Include="Models\Bill\ProductionPlans\ProductionPlanModel.cs" />
+@@ -249,6 +251,8 @@
+     <Compile Include="Models\Configuration\Bill\DailyBalances\DailyBalanceBillProfile.cs" />
+     <Compile Include="Models\Configuration\Bill\KeepAcountBills\KeepAccountBillDetailProfile.cs" />
+     <Compile Include="Models\Configuration\Bill\KeepAcountBills\KeepAccountBillProfile.cs" />
++    <Compile Include="Models\Configuration\Bill\ManualMaterialBills\ManualMaterialBillDetailProfile.cs" />
++    <Compile Include="Models\Configuration\Bill\ManualMaterialBills\ManualMaterialBillProfile.cs" />
+     <Compile Include="Models\Configuration\Bill\ProSamplingBills\SamplingBillProfile.cs" />
+     <Compile Include="Models\Configuration\HistoryBill\DailyBalanceHistories\DailyBalanceBillHistoryProfile.cs" />
+     <Compile Include="Models\Configuration\HistoryWorkTask\TaskHistories\TaskDetailHistoryProfile.cs" />
+@@ -463,12 +467,14 @@
+     <Compile Include="Services\Bill\AssortedBillService.cs" />
+     <Compile Include="Services\Bill\FormulaOutService.cs" />
+     <Compile Include="Services\Bill\KeepAccountBillService.cs" />
++    <Compile Include="Services\Bill\ManualMaterialBillService.cs" />
+     <Compile Include="Services\Bill\ProductionPlanService.cs" />
+     <Compile Include="Services\Bill\MatchPalletPlanService.cs" />
+     <Compile Include="Services\Bill\ProSamplingBillService.cs" />
+     <Compile Include="Services\Bill\SamplingBillService.cs" />
+     <Compile Include="Services\HistoryWorkTask\TaskHistoryService.cs" />
+     <Compile Include="Services\Interfaces\Bill\IKeepAccountBillService.cs" />
++    <Compile Include="Services\Interfaces\Bill\IManualMaterialBillService.cs" />
+     <Compile Include="Services\Interfaces\Bill\IProSamplingBillService.cs" />
+     <Compile Include="Services\Interfaces\HistoryWorkTask\ITaskHistoryService.cs" />
+     <Compile Include="Services\Interfaces\LibraryResources\ILibraryResourceService.cs" />
+diff --git a/src/Domain/Fusion.Context.Warehouse.Domain/Fusion.Context.Warehouse.Domain.csproj b/src/Domain/Fusion.Context.Warehouse.Domain/Fusion.Context.Warehouse.Domain.csproj
+index c82e7a9..095bb02 100644
+--- a/src/Domain/Fusion.Context.Warehouse.Domain/Fusion.Context.Warehouse.Domain.csproj
++++ b/src/Domain/Fusion.Context.Warehouse.Domain/Fusion.Context.Warehouse.Domain.csproj
+@@ -126,6 +126,10 @@
+     <Compile Include="Models\Bill\KeepAccountBills\KeepAccountBillDetail.cs" />
+     <Compile Include="Models\Bill\KeepAccountBills\KeepAccountBillStatus.cs" />
+     <Compile Include="Models\Bill\KeepAccountBills\KeepAccountType.cs" />
++    <Compile Include="Models\Bill\ManualMaterialBills\ManualMaterialBill.cs" />
++    <Compile Include="Models\Bill\ManualMaterialBills\ManualMaterialBillDetail.cs" />
++    <Compile Include="Models\Bill\ManualMaterialBills\ManualMaterialBillDetailStatus.cs" />
++    <Compile Include="Models\Bill\ManualMaterialBills\ManualMaterialBillStatus.cs" />
+     <Compile Include="Models\Bill\ProductionPlans\ProductionPlan.cs" />
+     <Compile Include="Models\Bill\ProductionPlans\ProductionPlanDetail.cs" />
+     <Compile Include="Models\Bill\ProductionPlans\ProductionPlanDetailStatus.cs" />
+@@ -336,6 +340,8 @@
+     <Compile Include="Repositories\Bill\IAssortedBillRepository.cs" />
+     <Compile Include="Repositories\Bill\IDailyBalanceBillRepository.cs" />
+     <Compile Include="Repositories\Bill\IKeepAccountBillRepository.cs" />
++    <Compile Include="Repositories\Bill\IManualMaterialBillRepository.cs" />
++    <Compile Include="Repositories\Bill\IManualMaterialRepository.cs" />
+     <Compile Include="Repositories\Bill\IMatchPalletPlanRepository.cs" />
+     <Compile Include="Repositories\Bill\IProductionPlanRepository.cs" />
+     <Compile Include="Repositories\Bill\IProSamplingBillRepository.cs" />
+diff --git a/src/Infrastructure/Fusion.Infrastructure.Mapping.Warehouse/Fusion.Infrastructure.Mapping.Warehouse.csproj b/src/Infrastructure/Fusion.Infrastructure.Mapping.Warehouse/Fusion.Infrastructure.Mapping.Warehouse.csproj
+index 88d0a29..5e0d811 100644
+--- a/src/Infrastructure/Fusion.Infrastructure.Mapping.Warehouse/Fusion.Infrastructure.Mapping.Warehouse.csproj
++++ b/src/Infrastructure/Fusion.Infrastructure.Mapping.Warehouse/Fusion.Infrastructure.Mapping.Warehouse.csproj
+@@ -225,6 +225,8 @@
+     <Compile Include="Models\Bill\InventoryBills\InventoryBillDetailMap.cs" />
+     <Compile Include="Models\Bill\KeepAccountBills\KeepAccountBillDetailMap.cs" />
+     <Compile Include="Models\Bill\KeepAccountBills\KeepAccountBillMap.cs" />
++    <Compile Include="Models\Bill\ManualMaterialBills\ManualMaterialBillDetailMap.cs" />
++    <Compile Include="Models\Bill\ManualMaterialBills\ManualMaterialBillMap.cs" />
+     <Compile Include="Models\Bill\ProductionPlans\ProductionPlanDetailMap.cs" />
+     <Compile Include="Models\Bill\ProductionPlans\ProductionPlanMap.cs" />
+     <Compile Include="Models\Bill\MatchPalletPlans\MatchPalletPlanDetailMap.cs" />
+diff --git a/src/User Interface/Fusion.WebApi.Warehouse/Fusion.WebApi.Warehouse.csproj b/src/User Interface/Fusion.WebApi.Warehouse/Fusion.WebApi.Warehouse.csproj
+index b577415..d4a224b 100644
+--- a/src/User Interface/Fusion.WebApi.Warehouse/Fusion.WebApi.Warehouse.csproj	
++++ b/src/User Interface/Fusion.WebApi.Warehouse/Fusion.WebApi.Warehouse.csproj	
+@@ -341,6 +341,7 @@
+     <Compile Include="Controllers\Bill\AssortedBillController.cs" />
+     <Compile Include="Controllers\Bill\FormulaOutController.cs" />
+     <Compile Include="Controllers\Bill\KeepAccountBillController.cs" />
++    <Compile Include="Controllers\Bill\ManualMaterialBillController.cs" />
+     <Compile Include="Controllers\Bill\ProductionPlanController.cs" />
+     <Compile Include="Controllers\Bill\MatchPalletPlanController.cs" />
+     <Compile Include="Controllers\Bill\ProSamplingBillController.cs" />
