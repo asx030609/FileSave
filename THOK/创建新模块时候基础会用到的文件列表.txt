@@ -1,0 +1,20 @@
+src/Application/Fusion.Context.BasicInfo.Application/Models/Configuration/Product/Models/ModelProfile.cs
+src/Application/Fusion.Context.BasicInfo.Application/Models/Product/Models/ModelModel.cs
+src/Application/Fusion.Context.BasicInfo.Application/Services/Interfaces/Product/IModelService.cs
+src/Application/Fusion.Context.BasicInfo.Application/Services/Product/ModelService.cs
+src/Domain/Fusion.Context.BasicInfo.Domain/Models/Product/Models/Model.cs
+src/Domain/Fusion.Context.BasicInfo.Domain/Repositories/Product/IModelRepository.cs
+src/Infrastructure/Fusion.Infrastructure.Mapping.BasicInfo/Models/Product/Models/ModelMap.cs
+src/Infrastructure/Fusion.Infrastructure.Repository.BasicInfo/Repositories/Product/ModelRepository.cs
+src/User Interface/Fusion.WebApi.BasicInfo/Controllers/Product/ModelController.cs
+src/User Interface/Fusion.WebApi.BasicInfo/Reports/Product/Model/ModelReport.cs
+src/User Interface/Fusion.WebApi.BasicInfo/Reports/Product/Model/ModelReportView.Designer.cs
+src/User Interface/Fusion.WebApi.BasicInfo/Reports/Product/Model/ModelReportView.cs
+src/User Interface/Fusion.WebApi.BasicInfo/Reports/Product/Model/ModelReportView.resx
+src/User Interface/Fusion/Extjs/Fusion/classic/src/BasicInfo/model/Product/Models/ModelModel.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/BasicInfo/store/Product/Models/ModelStore.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/BasicInfo/view/Product/Models/FindModel.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/BasicInfo/view/Product/Models/Model.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/BasicInfo/view/Product/Models/ModelController.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/BasicInfo/view/Product/Models/ModelToolbar.js
+src/User Interface/Fusion/Extjs/Fusion/classic/src/BasicInfo/view/Product/Models/ModifyModel.js
