@@ -27,36 +27,12 @@ Ext.define('Fusion.warehouse.view.bill.ManualMaterialBills.ManualMaterialBillCon
     reverifyTitle: '反审',
     reverifyTip: '确认要反审该记录吗？',
     reverifySuccess: '反审成功！',
-    taskTitle: '作业',
-    taskTip: '确认要执行生产作业操作吗？作业后该生产计划无法取消！',
-    taskSuccess: '作业成功！',
-    shiftTitle: '快捷添加',
-    shiftTip: '确认将选中的生产计划明细添加到其它班组？',
-    shiftSuccess: '添加成功！',
-    saveTitle: '保存',
-    settleTitle: '结单',
-    batchSettleTitle: '批量结单',
-    settleTip: '确认要结单吗？单结后将无法再操作！请谨慎操作！',
-    settleSuccess: '结单成功！',
 
     manualMaterialBillStatuses: {
         Entered: 0,
         Audited: 1,
         Executing: 2,
         Settled: 3
-    },
-
-    getClassesStore: function () {
-        var classesStore = Ext.create('Ext.data.Store', {
-            fields: ['key', 'value'],
-            data: [
-                { 'key': '(1)', 'value': '08:30:00--16:30:00' },
-                { 'key': '(2)', 'value': '16:30:00--00:30:00' },
-                { 'key': '(3)', 'value': '00:30:00--08:30:00' },
-                { 'key': '(4)', 'value': '00:00:00--23:59:59' }
-            ]
-        });
-        return classesStore;
     },
 
     setManualMaterialBill: function (manualMaterialBills) {
@@ -74,38 +50,6 @@ Ext.define('Fusion.warehouse.view.bill.ManualMaterialBills.ManualMaterialBillCon
             grid.manualMaterialBill= null;
             grid.manualMaterialBillNo = null;
             grid.manualMaterialBillStatus = null;
-        }
-    },
-
-    batchSetManualMaterialBill: function (manualMaterialBills) {
-        var me = this,
-            grid, planStatus;
-
-        grid = me.getView();
-        
-        if (manualMaterialBills != null && manualMaterialBills.length > 1) {
-            var allSame = true;
-            for (var i = 0; i < manualMaterialBills.length; i++) {
-
-                grid.manualMaterialBill= manualMaterialBills[i];
-                grid.manualMaterialBillNo = grid.manualMaterialBill.get("ManualMaterialBillNo");
-                grid.manualMaterialBillStatus = grid.manualMaterialBill.get("ManualMaterialBillStatus");
-
-                if (i == 0) {
-                    planStatus = grid.manualMaterialBillStatus;
-                }
-
-                if (planStatus != grid.manualMaterialBillStatus) {
-                    allSame = false;
-                    break;
-                }
-            }
-
-            if (!allSame) {
-                grid.manualMaterialBill= null;
-                grid.manualMaterialBillNo = null;
-                grid.manualMaterialBillStatus = null;
-            }
         }
     },
 
@@ -136,12 +80,7 @@ Ext.define('Fusion.warehouse.view.bill.ManualMaterialBills.ManualMaterialBillCon
         btnDetailAdd = grid.down('toolbar button#btnDetailAdd');
         btnRemove = grid.down('toolbar button#btnRemove');
         btnVerify = grid.down('toolbar button#btnVerify');
-        btnBatchVerify = grid.down('toolbar button#btnBatchVerify');
         btnReverify = grid.down('toolbar button#btnReverify');
-        btnTask = grid.down('toolbar button#btnTask');
-        btnBatchTask = grid.down('toolbar button#btnBatchTask');
-        btnSettle = grid.down('toolbar button#btnSettle');
-        btnBatchSettle = grid.down('toolbar button#btnBatchSettle');
 
         if (btnModify) {
             btnModify[selected.length == 1
@@ -167,13 +106,6 @@ Ext.define('Fusion.warehouse.view.bill.ManualMaterialBills.ManualMaterialBillCon
                 : 'disable']();
         }
 
-        if (btnBatchVerify) {
-            btnBatchVerify[viewModel.get('functions.verify.IsAuthenticated')
-                && manualMaterialBillStatus == me.manualMaterialBillStatuses.Entered
-                ? 'enable'
-                : 'disable']();
-        }
-
         if (btnReverify) {
             btnReverify[selected.length == 1
                 && viewModel.get('functions.reverify.IsAuthenticated')
@@ -190,33 +122,11 @@ Ext.define('Fusion.warehouse.view.bill.ManualMaterialBills.ManualMaterialBillCon
                 : 'disable']();
         }
 
-        if (btnBatchTask) {
-            btnBatchTask[viewModel.get('functions.task.IsAuthenticated')
-                && (manualMaterialBillStatus == me.manualMaterialBillStatuses.Audited)
-                ? 'enable'
-                : 'disable']();
-        }
-
         if (btnDetailAdd) {
             btnDetailAdd[selected.length == 1
                 && viewModel.get('functions.detailAdd.IsAuthenticated')
                 && (manualMaterialBillStatus == me.manualMaterialBillStatuses.Audited
                     || manualMaterialBillStatus == me.manualMaterialBillStatuses.Executing)
-                ? 'enable'
-                : 'disable']();
-        }
-
-        if (btnSettle) {
-            btnSettle[selected.length == 1
-                && viewModel.get('functions.settle.IsAuthenticated')
-                && manualMaterialBillStatus == me.manualMaterialBillStatuses.Executing
-                ? 'enable'
-                : 'disable']();
-        }
-
-        if (btnBatchSettle) {
-            btnBatchSettle[ viewModel.get('functions.settle.IsAuthenticated')
-                && manualMaterialBillStatus == me.manualMaterialBillStatuses.Executing
                 ? 'enable'
                 : 'disable']();
         }
@@ -362,18 +272,6 @@ Ext.define('Fusion.warehouse.view.bill.ManualMaterialBills.ManualMaterialBillCon
         me.buttonClickPost(windowTitle, message, postUrl, successMsg);
     },
 
-    onBatchVerifyClick: function () {
-        var me = this,
-            windowTitle, message, postUrl, successMsg;
-
-        windowTitle = me.batchVerifyTitle;
-        message = me.batchVerifyTip;
-        postUrl = 'Api/ManualMaterialBill/BatchVerify';
-        successMsg = me.batchVerifySuccess;
-
-        me.buttonClickBatchPost(windowTitle, message, postUrl, successMsg);        
-    },
-
     onReverifyClick: function () {
         var me = this,
             windowTitle, message, postUrl, successMsg;
@@ -383,26 +281,6 @@ Ext.define('Fusion.warehouse.view.bill.ManualMaterialBills.ManualMaterialBillCon
         postUrl = 'Api/ManualMaterialBill/Reverify';
         successMsg = me.reverifySuccess;
         me.buttonClickPost(windowTitle, message, postUrl, successMsg);
-    },
-
-    onTaskClick: function () {
-        var me = this, windowTitle, message, postUrl, successMsg;
-
-        windowTitle = me.taskTitle;
-        message = me.taskTip;
-        postUrl = 'Api/ManualMaterialBill/Task';
-        successMsg = me.taskSuccess;
-        me.buttonClickPost(windowTitle, message, postUrl, successMsg);
-    },
-
-    onBatchTaskClick: function () {
-        var me = this, windowTitle, message, postUrl, successMsg;
-
-        windowTitle = me.taskTitle;
-        message = me.taskTip;
-        postUrl = 'Api/ManualMaterialBill/BatchTask';
-        successMsg = me.taskSuccess;
-        me.buttonClickBatchPost(windowTitle, message, postUrl, successMsg);
     },
 
     onDetailAddClick: function (button) {
