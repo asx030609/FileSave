@@ -1,6 +1,7 @@
 
 create or replace function F_01(
     IN_MATCH_PALLET_CODE varchar2
+    ,IN_FACTURER_CODE varchar2
 )
 RETURN VARCHAR2
 IS
@@ -21,7 +22,8 @@ BEGIN
       SELECT COUNT(LOCATION_CODEU) AS LNUM,LOCATION_CODEU  FROM WM_PALLETU WHERE LENGTH(LOCATION_CODEU)=8 GROUP BY LOCATION_CODEU ORDER BY LOCATION_CODEU ASC
       ) WHERE LNUM =1 AND STORAGE_QUANTITYU = 0
     ) AND MATCH_PALLET_CODEU IS NULL AND ROWNUM=1;
-  dbms_output.put_line('插入了的货位是：'||V_TEMP);
+  dbms_output.put_line('插入了的货位是：'||V_TEMP||'   盘位ID:  '||V_TEMP2);
+  dbms_output.put_line('对应的查询sql为：SELECT * FROM WM_STORAGEU  WHERE LOCATION_CODEU ='''||V_TEMP||''' AND PALLET_IDU='''||V_TEMP2||''';');
     
   ----插入盘位信息    
     update "C##FUSION"."WM_PALLETU" TB_PALLET
@@ -49,6 +51,10 @@ BEGIN
       INNER JOIN BI_PRODUCTU TB_C ON TB_C.PRODUCT_CODEU = TB_A.PRODUCT_CODEU
       WHERE TB_A.MATCH_PALLET_CODEU=IN_MATCH_PALLET_CODE;
     
+  ----更新库存的厂商信息
+  UPDATE WM_STORAGEU SET (FACTURER_CODEU, FACTURER_NAMEU) = (SELECT FACTURER_CODEU, FACTURER_NAMEU FROM BI_FACTURERU WHERE FACTURER_CODEU=IN_FACTURER_CODE) 
+    WHERE LOCATION_CODEU =V_TEMP AND PALLET_IDU=V_TEMP2;
+  
   return '^_^';
 END;
 /
@@ -56,7 +62,7 @@ SET SERVEROUTPUT ON;
 Declare
   ret varchar2(20);
 Begin
-  dbms_output.put_line('返回值：'||F_01('HJYYDH-1003'));
+  dbms_output.put_line('返回值：'||F_01('HQQMG-1002', 'Fac0002'));
   --dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
   --dbms_output.put_line('返回值：'||F_01('HQQTXJ-2001'));
   --dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
