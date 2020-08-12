@@ -21,7 +21,7 @@ REM Ìí¼ÓIP
 netsh interface ipv4 add address name="WLAN"  addr=172.30.10.24 mask=255.255.224.0 gateway=172.30.0.1 gwmetric=0 
 ::goto end
 netsh interface ipv4 add address name="WLAN" addr=192.168.43.143 mask=255.255.255.0 gateway=192.168.43.206 gwmetric=0 
-netsh interface ipv4 add address name="WLAN" addr=10.65.27.144 mask=255.255.255.192 gateway=10.65.27.129 gwmetric=0
+netsh interface ipv4 add address name="WLAN" addr=10.65.27.141 mask=255.255.255.192 gateway=10.65.27.129 gwmetric=0
 netsh interface ipv4 set dns "WLAN" static 192.168.43.206 primary
 ::netsh interface ipv4 set dns "WLAN" static 192.168.43.206 primary ::validate=no
 ::netsh interface ip add dns "WLAN" 192.168.43.233 index=2 

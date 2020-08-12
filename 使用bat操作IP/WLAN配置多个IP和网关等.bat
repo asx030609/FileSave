@@ -22,7 +22,7 @@ netsh interface ipv4 add address name="WLAN"  addr=172.30.10.23 mask=255.255.224
 ::如果name使用了%NetName%，mask不能这样使用，也许也该使用变量名吧
 ::goto end
 netsh interface ipv4 add address name="WLAN" addr=192.168.43.144 mask=255.255.255.0 gateway=192.168.43.206 gwmetric=0 
-netsh interface ipv4 add address name="WLAN" addr=10.65.27.143 mask=255.255.255.192 gateway=10.65.27.129 gwmetric=0
+netsh interface ipv4 add address name="WLAN" addr=10.65.27.141 mask=255.255.255.192 gateway=10.65.27.129 gwmetric=0
 netsh interface ipv4 set dns "WLAN" static 192.168.43.206 primary
 ::netsh interface ipv4 set dns "WLAN" static 192.168.43.206 primary ::validate=no
 ::netsh interface ip add dns "WLAN" 192.168.43.233 index=2 
