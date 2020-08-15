@@ -22,7 +22,6 @@ src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMat
 src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBill.js
 src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillContainer.js
 src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillController.js
-src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/AddManualMaterialBillDetail.js
 src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/FindManualMaterialBillDetail.js
 src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/ManualMaterialBillDetail.js
 src/User Interface/Fusion/Extjs/Fusion/classic/src/Warehouse/view/Bill/ManualMaterialBills/ManualMaterialBillDetail/ManualMaterialBillDetailController.js
