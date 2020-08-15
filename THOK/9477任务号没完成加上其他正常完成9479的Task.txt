@@ -1,0 +1,242 @@
+
+2020-08-13 10:09:47,513 [22] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:09:47 放货完成，202002位置无需在这步和电控交互
+2020-08-13 10:09:47,513 [22] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:09:47 <xmp>AGV放货完成WCS反馈：<HM><ID>69</ID><TC>AD</TC><LY><ID>9477</ID><CD>MOVE</CD><ST>STORED</ST><PR>5</PR><MV><ID>3</ID></MV><LD><ID>0</ID></LD><SC><ID>1002</ID></SC><DS><ID>3008</ID></DS><FS><ID>1002</ID></FS><FD><ID>3008</ID></FD></LY><RT>SUCCESS</RT><RC>0</RC></HM></xmp>
+2020-08-13 10:09:47,528 [22] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:09:47 WCS发送：{ 0x06, 0x03 }起止结束符代替心跳
+2020-08-13 10:09:47,653 [22] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:09:47 <xmp>WCS接收：<?xml version="1.0"?>
+<HM>
+  <ID>70</ID>
+  <TC>AC</TC>
+  <LY>
+    <ID>9477</ID>
+    <CD>MOVE</CD>
+    <ST>FINISHED</ST>
+    <PR>5</PR>
+    <MV>
+      <ID>3</ID>
+    </MV>
+    <LD>
+      <ID>0</ID>
+    </LD>
+    <SC>
+      <ID>1002</ID>
+    </SC>
+    <DS>
+      <ID>3008</ID>
+    </DS>
+    <FS>
+      <ID>1002</ID>
+    </FS>
+    <FD>
+      <ID>3008</ID>
+    </FD>
+    <RT>SUCCESS</RT>
+    <RC>0</RC>
+  </LY>
+</HM></xmp>
+2020-08-13 10:09:47,888 [22] ERROR FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:09:47 Tips：An error occurred while executing the command definition. See the inner exception for details.
+======后面隔着的是49毫秒的数据了。
+2020-08-13 10:09:49,126 [73] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:09:49 作业设备：AGV当前任务数：4大于等于最大任务数：4；请检查！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=============如果是正常完成的任务，是这种记录的。
+
+2020-08-13 10:40:19,509 [32] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:40:19 放货完成，103004位置无需在这步和电控交互
+2020-08-13 10:40:19,510 [32] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:40:19 <xmp>AGV放货完成WCS反馈：<HM><ID>69</ID><TC>AD</TC><LY><ID>9479</ID><CD>MOVE</CD><ST>STORED</ST><PR>5</PR><MV><ID>4</ID></MV><LD><ID>0</ID></LD><SC><ID>1002</ID></SC><DS><ID>4023</ID></DS><FS><ID>1002</ID></FS><FD><ID>4023</ID></FD></LY><RT>SUCCESS</RT><RC>0</RC></HM></xmp>
+2020-08-13 10:40:19,511 [32] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:40:19 WCS发送：{ 0x06, 0x03 }起止结束符代替心跳
+2020-08-13 10:40:20,215 [32] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:40:20 <xmp>WCS接收：<?xml version="1.0"?>
+<HM>
+  <ID>70</ID>
+  <TC>AC</TC>
+  <LY>
+    <ID>9479</ID>
+    <CD>MOVE</CD>
+    <ST>FINISHED</ST>
+    <PR>5</PR>
+    <MV>
+      <ID>4</ID>
+    </MV>
+    <LD>
+      <ID>0</ID>
+    </LD>
+    <SC>
+      <ID>1002</ID>
+    </SC>
+    <DS>
+      <ID>4023</ID>
+    </DS>
+    <FS>
+      <ID>1002</ID>
+    </FS>
+    <FD>
+      <ID>4023</ID>
+    </FD>
+    <RT>SUCCESS</RT>
+    <RC>0</RC>
+  </LY>
+</HM></xmp>
+2020-08-13 10:40:20,434 [32] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:40:20 <xmp>AGV任务完成WCS反馈：<HM><ID>70</ID><TC>AC</TC><LY><ID>9479</ID><CD>MOVE</CD><ST>FINISHED</ST><PR>5</PR><MV><ID>4</ID></MV><LD><ID>0</ID></LD><SC><ID>1002</ID></SC><DS><ID>4023</ID></DS><FS><ID>1002</ID></FS><FD><ID>4023</ID></FD><RT>SUCCESS</RT><RC>0</RC></LY><RT>SUCCESS</RT><RC>0</RC></HM></xmp>
+2020-08-13 10:40:20,434 [32] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:40:20 WCS发送：{ 0x06, 0x03 }起止结束符代替心跳
+2020-08-13 10:40:20,567 [9] INFO  FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:40:20 <xmp>WCS接收：<?xml version="1.0"?>
+<HM>
+  <ID>30</ID>
+  <TC>MS</TC>
+  <LY>
+    <ID>1</ID>
+    <LO>
+      <ID>0000</ID>
+    </LO>
+    <NA>
+      <ID>0000</ID>
+    </NA>
+    <SS>
+      <ID>0000</ID>
+    </SS>
+    <EB>
+      <ID>0000</ID>
+    </EB>
+    <BL>
+      <ID>0000</ID>
+    </BL>
+    <LB>
+      <ID>0000</ID>
+    </LB>
+    <SR>
+      <ID>0000</ID>
+    </SR>
+    <SSF>
+      <ID>0000</ID>
+    </SSF>
+    <SRS>
+      <ID>0000</ID>
+    </SRS>
+    <FE>
+      <ID>0000</ID>
+    </FE>
+  </LY>
+</HM><?xml version="1.0"?>
+<HM>
+  <ID>30</ID>
+  <TC>MS</TC>
+  <LY>
+    <ID>2</ID>
+    <LO>
+      <ID>0001</ID>
+    </LO>
+    <NA>
+      <ID>0000</ID>
+    </NA>
+    <SS>
+      <ID>0000</ID>
+    </SS>
+    <EB>
+      <ID>0000</ID>
+    </EB>
+    <BL>
+      <ID>0000</ID>
+    </BL>
+    <LB>
+      <ID>0000</ID>
+    </LB>
+    <SR>
+      <ID>0000</ID>
+    </SR>
+    <SSF>
+      <ID>0000</ID>
+    </SSF>
+    <SRS>
+      <ID>0000</ID>
+    </SRS>
+    <FE>
+      <ID>0000</ID>
+    </FE>
+  </LY>
+</HM><?xml version="1.0"?>
+<HM>
+  <ID>30</ID>
+  <TC>MS</TC>
+  <LY>
+    <ID>3</ID>
+    <LO>
+      <ID>0000</ID>
+    </LO>
+    <NA>
+      <ID>0000</ID>
+    </NA>
+    <SS>
+      <ID>0000</ID>
+    </SS>
+    <EB>
+      <ID>0000</ID>
+    </EB>
+    <BL>
+      <ID>0000</ID>
+    </BL>
+    <LB>
+      <ID>0000</ID>
+    </LB>
+    <SR>
+      <ID>0000</ID>
+    </SR>
+    <SSF>
+      <ID>0000</ID>
+    </SSF>
+    <SRS>
+      <ID>0000</ID>
+    </SRS>
+    <FE>
+      <ID>0000</ID>
+    </FE>
+  </LY>
+</HM><?xml version="1.0"?>
+<HM>
+  <ID>30</ID>
+  <TC>MS</TC>
+  <LY>
+    <ID>4</ID>
+    <LO>
+      <ID>0000</ID>
+    </LO>
+    <NA>
+      <ID>0000</ID>
+    </NA>
+    <SS>
+      <ID>0000</ID>
+    </SS>
+    <EB>
+      <ID>0000</ID>
+    </EB>
+    <BL>
+      <ID>0000</ID>
+    </BL>
+    <LB>
+      <ID>0000</ID>
+    </LB>
+    <SR>
+      <ID>0000</ID>
+    </SR>
+    <SSF>
+      <ID>0000</ID>
+    </SSF>
+    <SRS>
+      <ID>0000</ID>
+    </SRS>
+    <FE>
+      <ID>0000</ID>
+    </FE>
+  </LY>
+</HM></xmp>
+2020-08-13 10:40:20,571 [9] ERROR FusionFramework.SCADA.Activity.AbstractActivity - 2020-08-13 10:40:20 Tips：索引超出了数组界限。
