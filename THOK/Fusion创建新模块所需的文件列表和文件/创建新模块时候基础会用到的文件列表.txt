@@ -7,7 +7,7 @@ src/Application/Fusion.Context.Warehouse.Application/Services/Interfaces/Bill/IM
 src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBill.cs
 src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBillDetail.cs
 src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBillDetailStatus.cs
-src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBillStatus.cs
+src/Domain/Fusion.Context.Warehouse.Domain/Models/Bill/ManualMaterialBills/ManualMaterialBillEnums.cs
 src/Domain/Fusion.Context.Warehouse.Domain/Repositories/Bill/IManualMaterialBillRepository.cs
 src/Domain/Fusion.Context.Warehouse.Domain/Repositories/Bill/IManualMaterialRepository.cs
 src/Infrastructure/Fusion.Infrastructure.Mapping.Warehouse/Models/Bill/ManualMaterialBills/ManualMaterialBillDetailMap.cs
