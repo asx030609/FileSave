@@ -5,6 +5,9 @@ select ('Y'||lpad(IDU, 35, '0')) START_CODE from sys_useru;
 SELECT LENGTH('123456') FROM DUAL;
 --*/
 
+alter table "C##FUSION"."SYS_PARAMETERU" add ("PARAMETER_VALUE_TYPEU" number(10, 0) null);
+alter table "C##FUSION"."WM_MANUAL_MATERIAL_BILLU" add ("MANUAL_MATERIAL_BILL_TYPEU" number(10, 0) not null);
+
 --/*针对某列，合并另外一列所有值
 SELECT LOCATION_STATUSU, LISTAGG(LOCATION_CODEU, ' ') WITHIN GROUP(order by LOCATION_STATUSU)  FROM C##FUSION.WM_LOCATIONU WHERE LENGTH(LOCATION_CODEU)=8 GROUP BY LOCATION_STATUSU;
 ----sys_connect_by_path太复杂，上面那个没问题就不研究connect_by了
@@ -111,9 +114,9 @@ WHERE
 	AND a.Table_Name = c.Table_Name 
 	AND b.OWNER = d.OWNER 
 	AND b.Table_Name = d.Table_Name
-  AND (b.Table_Name LIKE '%BI_PRODUCTU%' or a.Table_Name LIKE '%BI_PRODUCTU%') ----有关于表BI_PRODUCTU的主外键
+  --AND (b.Table_Name LIKE '%FK_WM_OUT_BILL_ALLOT_765560629%' or a.Table_Name LIKE '%BI_PRODUCTU%') ----有关于表BI_PRODUCTU的主外键
   --AND (c.Column_Name LIKE '%REGION_DAILY_BALANCE_IDU%' or c.Column_Name LIKE '%WAREHOUSE_DAILY_BALANCE_IDU%')  --主键列
-  --AND c.CONSTRAINT_NAME LIKE 'FK_WM_REGION_DAILY__%' --外键名
+  AND c.CONSTRAINT_NAME LIKE 'FK_WM_OUT_BILL_ALLOT_765560629%' --外键名
 	order by a.Table_Name asc;
 --*/
 
@@ -179,13 +182,13 @@ order by
 select a.constraint_name,  a.column_name 
 from user_cons_columns a, user_constraints b 
 where a.constraint_name = b.constraint_name 
-and b.constraint_type = 'P' and a.table_name = '大写的表名';
+and b.constraint_type = 'P' and a.table_name = 'WM_OUT_BILL_ALLOT';
 
 --查询外键
 select a.constraint_name,  a.column_name 
 from user_cons_columns a, user_constraints b 
 where a.constraint_name = b.constraint_name 
-and b.constraint_type = 'R' and a.table_name = '大写的表名';
+and b.constraint_type = 'R' and a.table_name = 'WM_OUT_BILL_ALLOT';
 
 --查询索引
 select * from user_indexes
