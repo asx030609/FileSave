@@ -27,12 +27,13 @@ Declare
   i_TotalNumber Integer;
   i_Input varchar2(200);
   v_content varchar2(150);
+  V_SPLIT VARCHAR2(20) := ',';
 Begin
-  i_Input := '1111 2222$3333 4444$5555$666666$77777$8888$9999$10101 23';
-  i_TotalNumber := length(i_Input) / 3;
-  for i in 0 .. i_TotalNumber
+  i_Input := 'WM_MACHINE_CALL_DETAILU,WM_MACHINE_HANDOVER_DETAILU';
+  i_TotalNumber := GET_OCCUR_COUNT(i_Input, V_SPLIT);
+  for i in 0 .. i_TotalNumber-1
   LOOP
-    v_content := Get_StrArrayStrOfIndex(i_Input, ' ', i);
+    v_content := Get_StrArrayStrOfIndex(i_Input, V_SPLIT, i);
     if(v_content is not null) then
       dbms_output.put_line(v_content);
     elsif (v_content is null) then

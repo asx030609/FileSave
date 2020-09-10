@@ -65,7 +65,7 @@ SET SERVEROUTPUT ON;
 Declare
   ret varchar2(20);
 Begin
-  dbms_output.put_line('返回值：'||F_01('HQQMG-1003', '')); --如果出现错误，一定要注意是否输入参数是否带有空格，微小的空格根本看不出来，要通过键盘的光标加上左右键移动才可以看出
+  dbms_output.put_line('返回值：'||F_01('HQQMG-1002', '')); --如果出现错误，一定要注意是否输入参数是否带有空格，微小的空格根本看不出来，要通过键盘的光标加上左右键移动才可以看出
   --dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
   --dbms_output.put_line('返回值：'||F_01('HQQTXJ-2001'));
   --dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
