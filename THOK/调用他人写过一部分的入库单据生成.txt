@@ -1,0 +1,18 @@
+
+
+		private void AutoGenerateInBIll(string productCode, decimal quantity, string inBillNo)
+		{
+			//NeedAllotProduct needAllotProduct = new NeedAllotProduct(new VProduct(productCode, ""), quantity);
+			var productInfo = ProductService.GetProductInfoOfDefaultUnit(productCode);
+			var otherProductCanInPresetLocation = ParameterService.GetParameterValueBy<bool>("OtherProductCanInPresetLocation", true);
+
+			var warehouse = WarehouseRepository.GetWarehouse();
+			var regionArray = warehouse.GetRegionsOfActivate().Where(t => t.RegionType == RegionType.TemporaryProduct).ToArray();
+			var shelfCodes = warehouse.GetShelvesOfActivate().Select(t => t.ShelfCode).ToArray();
+			var locationsOfAllotIn = LocationRepository.GetLocationsOfAllotIn(warehouse.WarehouseCode, regionArray.Select(t => t.RegionCode).ToArray(), shelfCodes);
+			var targetLocation = CalculateLocationOfInboundService.ApplyLocation(productInfo, quantity, regionArray.FirstOrDefault().RegionName, locationsOfAllotIn, otherProductCanInPresetLocation);
+
+			InBillService.InBillByBillNoAndLocationNo(inBillNo, targetLocation.LocationCode, productCode, quantity);
+		}
+
+InBillService.DirectInBill函数会一个产品编码都生成一个单据
