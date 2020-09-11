@@ -5,6 +5,8 @@
 SELECT TO_CHAR(SYSDATE, 'yy-mm-dd hh24:mi:ss') FROM DUAL;
 SELECT TO_CHAR(SYSDATE, 'yymmddhh24miss') FROM DUAL;
 SELECT to_date('2019/11/14 16:30:00', 'yyyy-mm-dd hh24:mi:ss') FROM DUAL;
+SELECT to_date('2019/11/14', 'yyyy-mm-dd') FROM DUAL;
+SELECT to_date('2019/9/1 0:00:00', 'yyyy-mm-dd hh24:mi:ss') FROM DUAL;
 --*/
 
 SELECT 'Year' AS truncType , TRUNC( SYSDATE, 'YYYY' ) FROM DUAL; --//Year	01-1ÔÂ -20
