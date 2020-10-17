@@ -12,7 +12,12 @@ END;
 --/*
 SET SERVEROUTPUT ON;
 begin
-  p_location_SET_NORMAL_OTHERSBAD('01-01-04', '333');
+  p_location_SET_NORMAL_OTHERSBAD(
+    '2222'
+    --, '01-01-04'
+    , '01-09-03'
+    --, '01-02-04'
+  );
   commit;
 end;
 /
