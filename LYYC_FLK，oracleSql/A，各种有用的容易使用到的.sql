@@ -153,6 +153,9 @@ from user_tables t inner join user_tab_comments f on t.table_name = f.table_name
 select t.table_name
 from user_tables t
 where t.table_name like '%CARGO%';
+select *
+from user_tables t
+where t.table_name like '%INTER%';
 
 select t.table_name, f.comments
 from user_tables t inner join user_tab_comments f on t.table_name = f.table_name

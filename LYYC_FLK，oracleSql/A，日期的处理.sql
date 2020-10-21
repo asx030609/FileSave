@@ -25,3 +25,5 @@ SELECT 'Year' AS truncType , TO_CHAR(TRUNC( SYSDATE, 'YYYY' ), 'yy-mm-dd hh24:mi
 ----上面是trunc([FOR DATE])，还有一种trunc([FOR RUMBER])
 SELECT TRUNC（89.98, 1） FROM DUAL; --//89.9
 SELECT TRUNC（89.98, -1） FROM DUAL; --//80
+
+
