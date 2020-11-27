@@ -63,6 +63,8 @@ begin
     strRet := 'INT';
   elsif(dataType='5') then
     strRet := 'DINT';
+  elsif(dataType='5') then
+    strRet := 'DReal';
   elsif(dataType='11') then
     strRet := 'STRING';
   end if;
