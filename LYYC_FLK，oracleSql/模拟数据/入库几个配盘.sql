@@ -42,7 +42,7 @@ BEGIN
   dbms_output.put_line('插入了的货位编码是：'||V_TEMP||'   盘位ID：'||V_TEMP2);
   dbms_output.put_line('对应的查询sql为：SELECT * FROM WM_STORAGEU  WHERE LOCATION_CODEU ='''||V_TEMP||''' AND PALLET_IDU='''||V_TEMP2||''';');
   
-  SELECT COUNT(*)+1 INTO V_USED_PALLET_NUM FROM WM_PALLETU WHERE LOCATION_CODEU='01-01-04' AND STORAGE_QUANTITYU != 0;
+  SELECT COUNT(*)+1 INTO V_USED_PALLET_NUM FROM WM_PALLETU WHERE LOCATION_CODEU=V_TEMP AND STORAGE_QUANTITYU != 0;
   ----插入盘位信息    
     update "C##FUSION"."WM_PALLETU" TB_PALLET
     set (IDU, LOCATION_CODEU, PALLET_NAMEU, MATCH_PALLET_CODEU, MATCH_PALLET_NAMEU, UNIQUE_IDU, PRODUCT_COUNTU
@@ -83,7 +83,7 @@ SET SERVEROUTPUT ON;
 Declare
   ret varchar2(20);
 Begin
-  dbms_output.put_line('返回值：'||F_01('HQQMG-1002', '')); --如果出现错误，一定要注意是否输入参数是否带有空格，微小的空格根本看不出来，要通过键盘的光标加上左右键移动才可以看出
+  dbms_output.put_line('返回值：'||F_01('HQQMG-1001', '')); --如果出现错误，一定要注意是否输入参数是否带有空格，微小的空格根本看不出来，要通过键盘的光标加上左右键移动才可以看出
   --dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
   --dbms_output.put_line('返回值：'||F_01('HQQTXJ-2001'));
   --dbms_output.put_line('返回值：'||F_01('HQQMG-2002'));
