@@ -1,0 +1,6 @@
+
+			Stopwatch sp01 = new Stopwatch();
+			sp01.Start();
+			//----要计算时间的函数代码
+			sp01.Stop();
+			Log1.Info($"^_^^_^********END TO XX001用时：{sp01.Elapsed.TotalMilliseconds.ToString()}毫秒！");
