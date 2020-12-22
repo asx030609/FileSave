@@ -1,0 +1,5 @@
+到达1#堆垛机放货位置，任务到达请求：
+----requestData.RequestCode=data[0];requestData.WorkPositionNo=data[1];requestData.TaskNo=data[2];requestData.PlcCheckNo=data[3];requestData.CalculateCheckNo=
+[1,2104,1,2106]
+到达盘点站台，任务到达请求：
+[1,2112,1,2114]

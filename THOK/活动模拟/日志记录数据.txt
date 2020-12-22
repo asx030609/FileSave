@@ -1,4 +1,6 @@
 
+		public static Common.Logging.ILog Log1 = Common.Logging.LogManager.GetLogger(typeof(AssortedInboundService));
+
 			Stopwatch sp01 = new Stopwatch();
 			sp01.Start();
 			//----要计算时间的函数代码
