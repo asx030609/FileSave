@@ -34,6 +34,7 @@ is
 begin
   strRet := 4;
   ----0,None；1,Bool；2,ByteBool；3,Byte,4,Short；5,Word；6,Dword；7,Int；8,Float；9,Sys；11,Str；
+  ----2021年1月4日08:54:38，发现应该有点问题，先略过他
   if(dataType = '1') then
     strRet := 1;
   elsif(dataType='7') then
@@ -55,16 +56,19 @@ is
 begin
   strRet := 0;
   ----0,None；1,Bool；2,ByteBool；3,Byte,4,Short；5,Word；6,Dword；7,Int；8,Float；9,Sys；11,Str；
+  ----2021年1月4日08:56:24，又重新整理
   if(dataType = '1') then
-    strRet := 'DBX';
-  elsif(dataType='7') then
-    strRet := 'DINT';
+    strRet := 'DBX'; --对应地址前缀是DBX，比如DB600.DBX0.0
+  elsif(dataType='3') then
+    strRet := 'BYTE';
   elsif(dataType='4') then
     strRet := 'INT';
   elsif(dataType='5') then
+    strRet := 'WORD';
+  elsif(dataType='7') then
     strRet := 'DINT';
-  elsif(dataType='5') then
-    strRet := 'DReal';
+  elsif(dataType='8') then
+    strRet := 'REAL';
   elsif(dataType='11') then
     strRet := 'STRING';
   end if;
