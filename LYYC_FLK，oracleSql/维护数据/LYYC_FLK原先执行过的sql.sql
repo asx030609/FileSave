@@ -1,4 +1,5 @@
-
+SELECT * FROM SYS_PARAMETERU;
+select max(idU) from SYS_PARAMETERU;
 
 
 ----////////产品信息
