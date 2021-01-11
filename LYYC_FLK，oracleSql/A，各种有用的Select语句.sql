@@ -1,4 +1,8 @@
 
+
+----使用count 和distinct（去重）关键bai字可以查看du数据库某列是否zhi有重复项
+select count(DISTINCT(IDU)) from SYS_PARAMETERU GROUP BY IDU;
+
 --/*查找某班已结单的工单（他们有相同的生产计划开始时间和结束）的开始结单时间和结束时间，如下的min、max
 SELECT TO_CHAR( MIN(UPDATE_TIMEU), 'yy-mm-dd hh24:mi:ss'), TO_CHAR( MAX(UPDATE_TIMEU), 'yy-mm-dd hh24:mi:ss') FROM WM_PRODUCTION_PLANU 
  WHERE PLAN_BEGIN_TIMEU >= to_date('2020/06/21 8:40:00', 'yyyy-mm-dd hh24:mi:ss')

@@ -118,9 +118,15 @@ WHERE
 	AND b.Table_Name = d.Table_Name
   --AND (b.Table_Name LIKE '%FK_WM_OUT_BILL_ALLOT_765560629%' or a.Table_Name LIKE '%BI_PRODUCTU%') ----有关于表BI_PRODUCTU的主外键
   --AND (c.Column_Name LIKE '%REGION_DAILY_BALANCE_IDU%' or c.Column_Name LIKE '%WAREHOUSE_DAILY_BALANCE_IDU%')  --主键列
-  AND c.CONSTRAINT_NAME LIKE 'FK_WM_OUT_BILL_ALLOT_765560629%' --外键名
+  AND (c.CONSTRAINT_NAME LIKE '%SYS_PARAMETERU%' --外键名
+    OR a.CONSTRAINT_NAME LIKE '%SYS_PARAMETERU%'
+  )
 	order by a.Table_Name asc;
 --*/
+----通过SYS_C0012537找到对应的表
+select a.constraint_name,a.constraint_type,b.column_name,b.table_name
+from user_constraints a inner join user_cons_columns b on a.table_name=b.table_name
+where a.CONSTRAINT_NAME LIKE '%SYS_PARAMETERU%';
 
 /*禁用主外键，以便更新主键引用表中的列    ---------->>>>>>好像没必要禁用，直接就可以更改了
 select 'alter table '||'BI_PRODUCT_UNITU'||' disable constraint '||'FK_BI_PRODUCT_UNITU_1434066075'||';' from user_constraints where constraint_type='R'; 
