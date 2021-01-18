@@ -17,7 +17,7 @@ begin
   p_location_SET_NORMAL_OTHERSBAD(
     '2222'
     --, '01-01-04'
-    , '01-13-03'
+    , '03-15-01'
     --, '01-02-04'
   );
   commit;

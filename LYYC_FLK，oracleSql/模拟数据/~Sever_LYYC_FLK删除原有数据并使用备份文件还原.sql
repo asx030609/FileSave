@@ -3,13 +3,13 @@
 --select * from dba_directories; --查找所有目录
 --提示用户连接错误时，如下处理
   SELECT 'alter system kill session '''|| SID||','||SERIAL#||''';' FROM V$SESSION WHERE USERNAME='C##FUSION';
-  
+alter system kill session '19,43382';
 drop tablespace C##Fusion INCLUDING CONTENTS AND DATAFILES;
 drop user C##Fusion cascade;
 drop  directory C##Fusion;
 --*/
 --/*
-create tablespace C##Fusion datafile 'D:\workspace\Data\Fusion\Fusion.dbf' size 256m autoextend on next 256m extent management local;
+create tablespace C##Fusion datafile 'D:\workspace\Data\Fusion\Fusion_cpk02.dbf' size 256m autoextend on next 256m extent management local;
 create user C##Fusion IDENTIFIED BY admin123456COM;
 alter user C##Fusion default tablespace C##Fusion temporary tablespace temp;
 create directory C##Fusion as 'D:\workspace\Data\Fusion';
@@ -31,7 +31,7 @@ grant read,write on directory C##Fusion to C##Fusion;
 --4、对于10g以上的服务器，使用exp通常不能导出0行数据的空表，而此时必须使用expdp导出。
 
 -----》》》》》正在使用的备份还原数据库
---（正在使用 (成功)）覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly20201027001.dmp
+--（正在使用 (成功)）覆盖原有数据库(慎用)impdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=LYCPK_20210116001.dmp
 --（正在使用 成功）备份***--expdp C##Fusion/admin123456COM@orcl directory=C##Fusion dumpfile=ly2020.dmp
 
 
