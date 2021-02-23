@@ -2,7 +2,7 @@
 
 SELECT Active&1 FROM BI_Product;
 select * from BI_Product where charindex(SUBSTRING(ProductCode,18,3),Weight)>0 and len(SUBSTRING(ProductCode,18,3))=len(Weight);
-SELECT SUBSTRING(ProductCode, 19, 3), Productcode FROM BI_PRODUCT;
+SELECT SUBSTRING(ProductCode, 19, 3), Productcode, LEN(ProductCode) FROM BI_PRODUCT;
 SELECT LEN(ProductCode) FROM BI_Product;
 SELECT * FROM BI_Product;-- WHERE ProductCode='5300001004689557101002014036';
 
@@ -10,7 +10,7 @@ SELECT * FROM BI_Shift;
 
 SELECT * FROM WM_Location WHERE LocationCode='02-21-02';
 SELECT * FROM WM_Storage;
-SELECT * FROM WM_Storage WHERE ProductCode='0000321004789656101002013036';
+SELECT * FROM WM_Storage WHERE ProductCode='00003210 04789656 10100201 3036';
 SELECT * FROM WM_Storage WHERE LocationCode='02-21-02';
 
 SELECT * FROM WM_OutBillAllot;

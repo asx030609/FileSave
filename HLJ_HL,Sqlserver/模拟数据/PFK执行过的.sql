@@ -1,7 +1,7 @@
 ﻿USE [FusionPFK]
 SELECT Active&1 FROM BI_Product;
 select * from BI_Product where charindex(SUBSTRING(ProductCode,18,3),Weight)>0 and len(SUBSTRING(ProductCode,18,3))=len(Weight);
-SELECT SUBSTRING(ProductCode, 19, 3), Productcode FROM BI_PRODUCT;
+SELECT SUBSTRING(ProductCode, 19, 3), Productcode, LEN(Productcode) FROM BI_PRODUCT;
 SELECT LEN(ProductCode) FROM BI_Product;
 SELECT * FROM BI_Product;-- WHERE ProductCode='5300001004689557101002014036';
 
