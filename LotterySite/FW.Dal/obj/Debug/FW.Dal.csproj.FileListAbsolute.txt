@@ -1,0 +1,11 @@
+E:\cc\test\LotterySite\FW.Dal\bin\Debug\FW.Dal.dll
+E:\cc\test\LotterySite\FW.Dal\bin\Debug\FW.Dal.pdb
+E:\cc\test\LotterySite\FW.Dal\bin\Debug\FW.Common.dll
+E:\cc\test\LotterySite\FW.Dal\bin\Debug\FW.Model.dll
+E:\cc\test\LotterySite\FW.Dal\bin\Debug\System.Data.SQLite.dll
+E:\cc\test\LotterySite\FW.Dal\bin\Debug\Dapper.Contrib.dll
+E:\cc\test\LotterySite\FW.Dal\bin\Debug\FW.Common.pdb
+E:\cc\test\LotterySite\FW.Dal\bin\Debug\FW.Model.pdb
+E:\cc\test\LotterySite\FW.Dal\obj\Debug\FW.Dal.csprojResolveAssemblyReference.cache
+E:\cc\test\LotterySite\FW.Dal\obj\Debug\FW.Dal.dll
+E:\cc\test\LotterySite\FW.Dal\obj\Debug\FW.Dal.pdb
