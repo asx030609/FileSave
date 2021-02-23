@@ -15,6 +15,15 @@ SELECT * FROM DMT_TAGU TB_A WHERE TB_A.TAG_CODEU = (SELECT MIN(TAG_CODEU) FROM D
 ----sys_connect_by_path太复杂，上面那个没问题就不研究connect_by了
 --*/
 
+----连接C##FUSION，并执行。。。
+SELECT DISTINCT(OWNER) FROM all_tables;
+SELECT * from all_tables WHERE (TABLE_NAME LIKE 'WM_%' OR TABLE_NAME LIKE 'BI_%') AND OWNER = 'C##FUSION';
+SELECT REPLACE(REPLACE(TABLE_NAME, 'BI_', 'A_'),'WM_','B_') from all_tables WHERE (TABLE_NAME LIKE 'WM_%' OR TABLE_NAME LIKE 'BI_%') AND OWNER = 'C##FUSION';
+SELECT 'BT_'||SUBSTR(TABLE_NAME,4) from all_tables WHERE (TABLE_NAME LIKE 'WM_%' OR TABLE_NAME LIKE 'BI_%') AND OWNER = 'C##FUSION';
+----
+select * from user_tab_comments;
+--点回车，以显示当前数据库实例中的用户名；
+select username from dba_users;
 
 ---- 查找数据库所有表的字段信息
 SELECT * FROM SYS.ALL_TAB_COLS WHERE "OWNER" = 'C##FUSION' AND COLUMN_NAME LIKE '%AREA%';-- AND TABLE_NAME LIKE '%BI_PRODUCT_SIZE%';
