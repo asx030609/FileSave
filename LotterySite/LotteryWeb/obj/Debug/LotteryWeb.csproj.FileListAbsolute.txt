@@ -50,3 +50,7 @@ E:\cc\test\LotterySite\LotteryWeb\obj\Debug\LotteryWeb.csprojResolveAssemblyRefe
 E:\cc\test\LotterySite\LotteryWeb\obj\Debug\LotteryWeb.dll
 E:\cc\test\LotterySite\LotteryWeb\obj\Debug\LotteryWeb.pdb
 E:\cc\test\LotterySite\LotteryWeb\bin\x86\SQLite.Interop.dll
+E:\repository\FileSaveV1\LotterySite\LotteryWeb\obj\Debug\LotteryWeb.csprojAssemblyReference.cache
+E:\repository\FileSaveV1\LotterySite\LotteryWeb\obj\Debug\LotteryWeb.csproj.CoreCompileInputs.cache
+E:\repository\FileSaveV1\LotterySite\LotteryWeb\obj\Debug\LotteryWeb.dll
+E:\repository\FileSaveV1\LotterySite\LotteryWeb\obj\Debug\LotteryWeb.pdb

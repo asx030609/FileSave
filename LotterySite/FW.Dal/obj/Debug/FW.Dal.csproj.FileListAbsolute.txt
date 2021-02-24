@@ -9,3 +9,16 @@ E:\cc\test\LotterySite\FW.Dal\bin\Debug\FW.Model.pdb
 E:\cc\test\LotterySite\FW.Dal\obj\Debug\FW.Dal.csprojResolveAssemblyReference.cache
 E:\cc\test\LotterySite\FW.Dal\obj\Debug\FW.Dal.dll
 E:\cc\test\LotterySite\FW.Dal\obj\Debug\FW.Dal.pdb
+E:\repository\FileSaveV1\LotterySite\FW.Dal\bin\Debug\FW.Dal.dll
+E:\repository\FileSaveV1\LotterySite\FW.Dal\bin\Debug\FW.Dal.pdb
+E:\repository\FileSaveV1\LotterySite\FW.Dal\bin\Debug\FW.Common.dll
+E:\repository\FileSaveV1\LotterySite\FW.Dal\bin\Debug\FW.Model.dll
+E:\repository\FileSaveV1\LotterySite\FW.Dal\bin\Debug\System.Data.SQLite.dll
+E:\repository\FileSaveV1\LotterySite\FW.Dal\bin\Debug\Dapper.Contrib.dll
+E:\repository\FileSaveV1\LotterySite\FW.Dal\bin\Debug\FW.Common.pdb
+E:\repository\FileSaveV1\LotterySite\FW.Dal\bin\Debug\FW.Model.pdb
+E:\repository\FileSaveV1\LotterySite\FW.Dal\obj\Debug\FW.Dal.csprojAssemblyReference.cache
+E:\repository\FileSaveV1\LotterySite\FW.Dal\obj\Debug\FW.Dal.csproj.CoreCompileInputs.cache
+E:\repository\FileSaveV1\LotterySite\FW.Dal\obj\Debug\FW.Dal.csproj.CopyComplete
+E:\repository\FileSaveV1\LotterySite\FW.Dal\obj\Debug\FW.Dal.dll
+E:\repository\FileSaveV1\LotterySite\FW.Dal\obj\Debug\FW.Dal.pdb

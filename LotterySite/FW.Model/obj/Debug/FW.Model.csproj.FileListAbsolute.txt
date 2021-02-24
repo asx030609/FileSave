@@ -9,3 +9,16 @@ E:\cc\test\LotterySite\FW.Model\bin\Debug\Dapper.xml
 E:\cc\test\LotterySite\FW.Model\obj\Debug\FW.Model.csprojResolveAssemblyReference.cache
 E:\cc\test\LotterySite\FW.Model\obj\Debug\FW.Model.dll
 E:\cc\test\LotterySite\FW.Model\obj\Debug\FW.Model.pdb
+E:\repository\FileSaveV1\LotterySite\FW.Model\bin\Debug\FW.Model.dll
+E:\repository\FileSaveV1\LotterySite\FW.Model\bin\Debug\FW.Model.pdb
+E:\repository\FileSaveV1\LotterySite\FW.Model\bin\Debug\Dapper.Contrib.dll
+E:\repository\FileSaveV1\LotterySite\FW.Model\bin\Debug\Dapper.dll
+E:\repository\FileSaveV1\LotterySite\FW.Model\bin\Debug\FW.Common.dll
+E:\repository\FileSaveV1\LotterySite\FW.Model\bin\Debug\System.Data.SQLite.dll
+E:\repository\FileSaveV1\LotterySite\FW.Model\bin\Debug\FW.Common.pdb
+E:\repository\FileSaveV1\LotterySite\FW.Model\bin\Debug\Dapper.xml
+E:\repository\FileSaveV1\LotterySite\FW.Model\obj\Debug\FW.Model.csprojAssemblyReference.cache
+E:\repository\FileSaveV1\LotterySite\FW.Model\obj\Debug\FW.Model.csproj.CoreCompileInputs.cache
+E:\repository\FileSaveV1\LotterySite\FW.Model\obj\Debug\FW.Model.csproj.CopyComplete
+E:\repository\FileSaveV1\LotterySite\FW.Model\obj\Debug\FW.Model.dll
+E:\repository\FileSaveV1\LotterySite\FW.Model\obj\Debug\FW.Model.pdb
