@@ -12,7 +12,7 @@ namespace xxoo.Common
 	   // 连接字符串  cater.db 相对路径 bin目录下
 	
         //连接字符串  //readonly 只读字段
-        private static readonly string connStr = "Data Source=E:/cc/test/LotterySite/Lib/db/cater.db;";
+        private static readonly string connStr = @"Data Source=E:\repository\FileSaveV1\LotterySite\SQLiteDatabase\Test.db";  // 连接串
             // ConfigurationManager.ConnectionStrings["Connsqlite"].ConnectionString;
 
         /// <summary>
