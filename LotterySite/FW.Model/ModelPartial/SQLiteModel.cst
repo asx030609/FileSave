@@ -6,12 +6,7 @@
 // 
 // The following connection settings were used to generate this file
 // 
-//     Connection String : `Data Source=E:/cc/test/LotterySite/Lib/db/cater.db;`
-
-
-// -----------------------------------------------------------------------------------------
-// Failed to read database schema - unable to open database file
-// -----------------------------------------------------------------------------------------
+//     Connection String : `Data Source=E:\repository\FileSaveV1\LotterySite\SQLiteDatabase\Test.db`
 
 		 
  
@@ -27,7 +22,6 @@ using Dapper.Contrib.Extensions;
 
 namespace FW.Model
 {
-
 
 
 

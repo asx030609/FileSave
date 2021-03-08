@@ -47,6 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelPartial\LuckDraw.cs">
+      <DependentUpon>SQLiteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPartial\ReplaceString.cs">
+      <DependentUpon>SQLiteModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelPartial\sqlite_sequence.cs">
+      <DependentUpon>SQLiteModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
