@@ -1,0 +1,4 @@
+ServerCode,ServerName,DataDriverName,ServerArguments,Test,ClassName,Active,CreateTime,UpdateTime,RowVersion
+WCSServer,辅料库服务,SiemensServer,"{""IP"":""172.30.17.1"",""Rack"":""0"",""Slot"":""1"",""TimeOut"":""1000"",""IsClosed"":"""",""CloseTime"":"""",""PDU"":"""",""Limit"":""""}",0,仓储控制服务,1,22-11月-19,16-1月 -21,AA37741419892B4D802D27AA6A028D54
+CR01Server,1号堆垛机服务,SiemensServer,"{""IP"":""172.30.17.111"",""Rack"":""0"",""Slot"":""1"",""TimeOut"":""1000"",""IsClosed"":"""",""CloseTime"":"""",""PDU"":"""",""Limit"":""""}",0,堆垛机,1,22-11月-19,22-11月-19,3EED3A49C422C04494E831C04B395DC6
+CR02Server,2号堆垛机服务,SiemensServer,"{""IP"":""172.30.17.112"",""Rack"":""0"",""Slot"":""1"",""TimeOut"":""1000"",""IsClosed"":"""",""CloseTime"":"""",""PDU"":"""",""Limit"":""""}",0,堆垛机,1,22-11月-19,22-11月-19,9FF12BF573B21B40A0E508CB3B28D465
