@@ -1,8 +1,0 @@
-E:\cc\test\LotterySite\FW.Common\bin\Release\FW.Common.dll
-E:\cc\test\LotterySite\FW.Common\bin\Release\FW.Common.pdb
-E:\cc\test\LotterySite\FW.Common\bin\Release\Dapper.Contrib.dll
-E:\cc\test\LotterySite\FW.Common\bin\Release\Dapper.dll
-E:\cc\test\LotterySite\FW.Common\bin\Release\System.Data.SQLite.dll
-E:\cc\test\LotterySite\FW.Common\bin\Release\Dapper.xml
-E:\cc\test\LotterySite\FW.Common\obj\Release\FW.Common.dll
-E:\cc\test\LotterySite\FW.Common\obj\Release\FW.Common.pdb
