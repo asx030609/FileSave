@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1209
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FW.Common", "FW.Common\FW.Common.csproj", "{671584E6-8EFC-4082-93FF-86AC2982036A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotteryWeb", "LotteryWeb\LotteryWeb.csproj", "{8004F325-E0AE-4779-B7B4-7A11CADBA101}"
@@ -34,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {660507AD-4C89-456D-BBFD-2F3ECAE8040F}
 	EndGlobalSection
 EndGlobal
