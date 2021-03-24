@@ -18,7 +18,7 @@ REM WLAN连接名称
 netsh interface ipv4 set address name="WLAN" source=dhcp
 echo set static IP
 REM 添加IP
-netsh interface ipv4 add address name="WLAN"  addr=172.30.10.24 mask=255.255.224.0 gateway=172.30.0.1 gwmetric=0 
+netsh interface ipv4 add address name="WLAN"  addr=172.30.10.23 mask=255.255.0.0 gateway=172.30.20.1 gwmetric=0 
 goto end
 netsh interface ipv4 add address name="WLAN" addr=192.168.43.143 mask=255.255.255.0 gateway=192.168.43.206 gwmetric=0 
 netsh interface ipv4 add address name="WLAN" addr=192.168.1.114 mask=255.255.255.0 gateway=192.168.1.1 gwmetric=0 
