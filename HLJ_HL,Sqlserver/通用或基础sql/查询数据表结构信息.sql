@@ -54,3 +54,7 @@ select
 ;
 select * from sys.foreign_keys;
 --*/
+
+----生成禁用、开启指定表外键约束
+SELECT 'ALTER TABLE '+b.name+' NOCHECK CONSTRAINT '+a.name+';' from sysobjects a, sysobjects b where a.xtype='f' and a.parent_obj=b.id and (b.name='TM_WorkPath' or b.name='TM_WorkPathNode');
+SELECT 'ALTER TABLE '+b.name+' CHECK CONSTRAINT '+a.name+';' from sysobjects a, sysobjects b where a.xtype='f' and a.parent_obj=b.id and (b.name='TM_WorkPath' or b.name='TM_WorkPathNode');
