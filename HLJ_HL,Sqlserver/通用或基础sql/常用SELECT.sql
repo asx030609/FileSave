@@ -14,3 +14,6 @@ select * from SYS_Function;
 
 ----
 SELECT * from SYS_User;
+
+-----
+SELECT * FROM DMT_Tag WHERE TagCode LIKE '%WCSTaskArriveRequest%' ;

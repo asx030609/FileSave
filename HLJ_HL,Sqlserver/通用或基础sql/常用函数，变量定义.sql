@@ -15,6 +15,12 @@ SELECT LEN('NAME01 COLOR01')-CHARINDEX(' ', REVERSE('NAME01 COLOR01'));		--6
 SELECT CHARINDEX(' ', REVERSE('NAME01 COLOR01'));	--8
 SELECT REVERSE('NAME01 COLOR01');		--10ROLOC 10EMAN
 
+DECLARE @LEN_ INT;
+set @LEN_ = 5;
+SELECT RIGHT(replicate('0', @LEN_)+'2', @LEN_);	----用0左补足到@LEN_位
+SELECT RIGHT(replicate('0', 5)+'2', 5);	----用0左补足到5位
+SELECT LEFT('2' + replicate('0', 4), 4);		----用0又补足到4位
+
 ----*****分组，选择前面几列
 ----SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY GETDATE()) AS ROWNUM,TB_A.* FROM WM_Location TB_A ORDER BY LocationCode) TB_B 
 ----	WHERE TB_B.ROWNUM <=10;		----报错：除非另外还指定了 TOP、OFFSET 或 FOR XML，否则，ORDER BY 子句在视图、内联函数、派生表、子查询和公用表表达式中无效。

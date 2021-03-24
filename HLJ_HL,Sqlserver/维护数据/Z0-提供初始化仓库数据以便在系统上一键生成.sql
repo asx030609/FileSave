@@ -42,7 +42,7 @@ INSERT [dbo].[SYS_WarehouseConfig] ([Id], [DBInitializId], [WarehouseConfigName]
 	, [Active], [IsGenerateWorkPosition], [EquipmentIsReverseControlShelf], [CreateTime], [UpdateTime], [RowVersion]) 
 VALUES (NEWID(), @DBInit_id, N'仓库配置001', 1, N'w001', N'w001r01'
 	, N'w001r01-{0}', 11, 32, 4, 2, 2, 2, 1, 1, 1, N'{1}-{2}-{0}', N'{1}排-{2}列-{0}层', N'{1}{2}{0}', N'{1}排{2}列{0}层', N'r-srm{0}'	---对应[ShelfCodeFormat]、层数、列数、行数
-	, N'{0}号堆垛机区', 2, 1, N'srm{0}', N'{0}号堆垛机', 2, 1, 2, 1, 1, 0, GETDATE()
+	, N'{0}号堆垛机区', 2, 1, N'SRM0{0}', N'{0}号堆垛机', 2, 1, 2, 1, 1, 0, GETDATE()
 	, GETDATE(), cast('10' as varbinary));
 
 --添加辅料入库站台2101相关的站台和作业位置

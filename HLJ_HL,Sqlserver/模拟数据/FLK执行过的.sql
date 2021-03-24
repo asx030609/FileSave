@@ -38,7 +38,19 @@ SELECT * FROM SYS_Dictionary WHERE DictionaryName LIKE '%海林%';
 SELECT * FROM SYS_DictionaryDetail WHERE [Name] LIKE '%海林%';
 SELECT * FROM SYS_DictionaryGroup;
 
+
 ----
+SELECT * FROM TM_Task WHERE TaskStatus=1;
+
+----作业位置
+SELECT * FROM TM_WorkPosition;
+SELECT TB_A.WorkPositionNo, TB_A.WorkPositionName
+	, CAST( SUBSTRING(CAST(TB_A.WorkPositionNo AS CHAR), 2,2) AS INT) 多少列
+	, CAST( SUBSTRING(CAST(TB_A.WorkPositionNo AS CHAR), 4,2) AS INT) 多少层
+	FROM TM_WorkPosition TB_A;
+
+
+----区域、模块、功能、权限、角色
 SELECT * FROM SYS_Area;
 SELECT * FROM SYS_Module;
 SELECT * FROM SYS_Function;
@@ -46,3 +58,16 @@ SELECT * FROM SYS_Function WHERE Id='6D2A24AE-AC5F-1214-8D84-6BBF920161D3';
 SELECT * FROM SYS_Function WHERE NAME LIKE '%刷新%';
 SELECT * FROM SYS_Permissions WHERE FunctionId in (SELECT Id FROM SYS_Function WHERE NAME LIKE '%刷新%');
 SELECT * FROM SYS_Role WHERE NAME LIKE '%mes%';
+
+
+-----
+/* 将TM_WorkPathNode表中的AGV-SRM01路径编码替换为AGV-SRM001
+Declare @orgin VARCHAR(20);
+set @orgin='AGV-SRM01';
+Declare @orginTo VARCHAR(20);
+set @orginTo='AGV-SRM001';
+ALTER TABLE TM_WorkPathNode NOCHECK CONSTRAINT FK_BEE7C009898EA9738DCCCE2B;
+UPDATE TM_WorkPath SET WorkPathCode=@orginTo WHERE WorkPathCode=@orgin;
+UPDATE TM_WorkPathNode SET WorkPathCode=@orginTo WHERE WorkPathCode=@orgin;
+ALTER TABLE TM_WorkPathNode CHECK CONSTRAINT FK_BEE7C009898EA9738DCCCE2B;
+----*/
