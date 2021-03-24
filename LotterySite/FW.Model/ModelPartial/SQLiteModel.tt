@@ -19,7 +19,9 @@
 <#@ import namespace="System.Text.RegularExpressions" #>
 <#@ import namespace="System.Configuration" #>
 <#@ import namespace="System.Data.SQLite" #>
+<#@ assembly name="$(SolutionDir)\FW.Common\bin\Debug\FW.Common.dll" #>
 <#@ output extension=".cst"#>  
+//<#@ assembly name="E:\repository\FileSaveV1\LotterySite\Lib\BaseClassUtils.dll" #>  
 
 
 <# 
@@ -48,6 +50,12 @@ namespace <#=Namespace #>
 
 <# fileManager.EndBlock(); #>
 
+
+<#
+    SQLitehelper sp = new SQLitehelper();
+//SQLiteHelper.ConnectionString = ConnectionString;
+			//var tbData = SQLiteHelper.ExecuteDataSet("SELECT * FROM ReplaceString");
+#>
 
 <#
 foreach(Table tbl in from t in tables where !t.Ignore select t){
