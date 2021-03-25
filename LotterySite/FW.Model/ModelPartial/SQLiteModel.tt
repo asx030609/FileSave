@@ -52,12 +52,6 @@ namespace <#=Namespace #>
 
 
 <#
-    SQLitehelper sp = new SQLitehelper();
-//SQLiteHelper.ConnectionString = ConnectionString;
-			//var tbData = SQLiteHelper.ExecuteDataSet("SELECT * FROM ReplaceString");
-#>
-
-<#
 foreach(Table tbl in from t in tables where !t.Ignore select t){
 		if(IsExcluded(tbl.Name, ExcludeTablePrefixes)) continue;
 		 
