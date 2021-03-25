@@ -61,6 +61,7 @@ static bool IsExcluded(string tablename, string[] ExcludeTablePrefixes)
 abstract class SchemaReader
 {
 	public abstract Tables ReadSchema(string connstr, string tableFilter);
+	public abstract DataTable LoadTableData(string connstr, string sql);
 	public GeneratedTextTransformation outer;
 	public void WriteLine(string o)
 	{

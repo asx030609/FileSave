@@ -11,6 +11,7 @@
     
 	// Read schema
 	var tables = LoadTables();   //读取的所有表结构
+    var tableData = GetDataTable();
 
 #>
 		 
