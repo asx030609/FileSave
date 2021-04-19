@@ -40,7 +40,7 @@ create procedure pro_001
 				set @vWorkPositionNo='3'+RIGHT('00' + CAST(@iJizuNo as varchar), 2)+ '001';	----作业位置是类似301001,302001等等等
 				SELECT @vWorkPositionName=WorkPositionName FROM TM_WorkPosition where WorkPositionNo=@vWorkPositionNo;
 				INSERT [dbo].[WM_MachinePallet]([PalletPosition], [MachineCode], [MachinePalletName], [PalletTypeCode], [PalletTypeName], [WorkPositionNo], [WorkPositionName], [CurrentBrandCode], [CurrentBrandName], [CurrentMatchPalletCode], [CurrentMatchPalletName], [CurrentUniqueId], [StorageTime], [Active], [SyncMachinePalletStatus], [CacheRegion], [MachinePalletStatus], [CreateTime], [UpdateTime], [RowVersion])
-					VALUES (@iTuoPanNo, @vJizuNo, @vWorkPositionNo, 'testPalletType01', '测试托盘类型01', @vWorkPositionNo, @vWorkPositionName, '', '', '', '', '', NULL, 'True', 'True', 'False', 0, CONVERT(datetime, '2021/3/31 14:54:03', 101), CONVERT(datetime, '2021/3/31 14:54:03', 101), NEWID());
+					VALUES (@iTuoPanNo, @vJizuNo, @iTuoPanNo, '1004', '咀棒盘', @vWorkPositionNo, @vWorkPositionName, '', '', '', '', '', NULL, 'True', 'True', 'False', 0, CONVERT(datetime, '2021/3/31 14:54:03', 101), CONVERT(datetime, '2021/3/31 14:54:03', 101), NEWID());
 				print('    '+@vWorkPositionNo + '    '+@vWorkPositionName);
 				set @iTuoPanNo = @iTuopanNo + 1;
 			end;

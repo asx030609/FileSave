@@ -1,5 +1,5 @@
 USE [FusionFLK]
-DELETE FROM WM_MachinePallet;
+DELETE FROM WM_MachinePallet where MachineCode like 'B1%' OR MachineCode like 'J1%';
 /*----这里是头部只给出示例sql，另外很多条sql都放在另一分离出的主表文档中
 DELETE FROM WM_Machine;
 INSERT [dbo].[WM_Machine]([MachineCode], [MachineName], [MachineType], [MachineClassify], [ClientIP], [Active], [Using], [ExternalMachineCode], [CreateTime], [UpdateTime], [RowVersion]) VALUES ('J101', '1#卷烟机', 2, NULL, '199.199.160.1:80', 'True', 'False', '', CONVERT(datetime, '2021/3/31 14:47:26', 101), CONVERT(datetime, '2021/3/31 14:47:26', 101), NEWID());
@@ -33,13 +33,13 @@ create procedure pro_001
 			set @iTuoPanNo = 1;
 			while @iTuoPanNo <=3	--位置4不用了
 			begin
-				set @vJizuNo ='J1'+RIGHT('00' + CAST(@iJizuNo as varchar), 2);
+				set @vJizuNo ='B1'+RIGHT('00' + CAST(@iJizuNo as varchar), 2);
 				print(@vJizuNo);
 				set @vWorkPositionNo ='';
 				set @vWorkPositionNo='1'+RIGHT('00' + CAST(@iJizuNo as varchar), 2)+ RIGHT('000'+CAST(@iTuoPanNo as varchar),3);
 				SELECT @vWorkPositionName=WorkPositionName FROM TM_WorkPosition where WorkPositionNo=@vWorkPositionNo;
 				INSERT [dbo].[WM_MachinePallet]([PalletPosition], [MachineCode], [MachinePalletName], [PalletTypeCode], [PalletTypeName], [WorkPositionNo], [WorkPositionName], [CurrentBrandCode], [CurrentBrandName], [CurrentMatchPalletCode], [CurrentMatchPalletName], [CurrentUniqueId], [StorageTime], [Active], [SyncMachinePalletStatus], [CacheRegion], [MachinePalletStatus], [CreateTime], [UpdateTime], [RowVersion])
-					VALUES (@iTuoPanNo, @vJizuNo, @vWorkPositionNo, 'testPalletType01', '测试托盘类型01', @vWorkPositionNo, @vWorkPositionName, '', '', '', '', '', NULL, 'True', 'True', 'False', 0, CONVERT(datetime, '2021/3/31 14:54:03', 101), CONVERT(datetime, '2021/3/31 14:54:03', 101), NEWID());
+					VALUES (@iTuoPanNo, @vJizuNo, @iTuoPanNo, '1002', '商标纸', @vWorkPositionNo, @vWorkPositionName, '', '', '', '', '', NULL, 'True', 'True', 'False', 0, CONVERT(datetime, '2021/3/31 14:54:03', 101), CONVERT(datetime, '2021/3/31 14:54:03', 101), NEWID());
 				print('    '+@vWorkPositionNo + '    '+@vWorkPositionName);
 				set @iTuoPanNo = @iTuopanNo + 1;
 			end;
@@ -47,13 +47,13 @@ create procedure pro_001
 			set @iTuoPanNo = 5;	
 			while @iTuoPanNo <=6
 			begin
-				set @vJizuNo ='B2'+RIGHT('00' + CAST(@iJizuNo as varchar), 2);
+				set @vJizuNo ='J1'+RIGHT('00' + CAST(@iJizuNo as varchar), 2);
 				print(@vJizuNo);
 				set @vWorkPositionNo ='';
 				set @vWorkPositionNo='1'+RIGHT('00' + CAST(@iJizuNo as varchar), 2)+ RIGHT('000'+CAST(@iTuoPanNo as varchar),3);
 				SELECT @vWorkPositionName=WorkPositionName FROM TM_WorkPosition where WorkPositionNo=@vWorkPositionNo;
 				INSERT [dbo].[WM_MachinePallet]([PalletPosition], [MachineCode], [MachinePalletName], [PalletTypeCode], [PalletTypeName], [WorkPositionNo], [WorkPositionName], [CurrentBrandCode], [CurrentBrandName], [CurrentMatchPalletCode], [CurrentMatchPalletName], [CurrentUniqueId], [StorageTime], [Active], [SyncMachinePalletStatus], [CacheRegion], [MachinePalletStatus], [CreateTime], [UpdateTime], [RowVersion])
-					VALUES (@iTuoPanNo, @vJizuNo, @vWorkPositionNo, 'testPalletType02', '测试托盘类型02', @vWorkPositionNo, @vWorkPositionName, '', '', '', '', '', NULL, 'True', 'True', 'False', 0, CONVERT(datetime, '2021/3/31 14:54:03', 101), CONVERT(datetime, '2021/3/31 14:54:03', 101), NEWID());
+					VALUES (@iTuoPanNo, @vJizuNo, @iTuoPanNo, '1003', '卷接盘',  @vWorkPositionNo, @vWorkPositionName, '', '', '', '', '', NULL, 'True', 'True', 'False', 0, CONVERT(datetime, '2021/3/31 14:54:03', 101), CONVERT(datetime, '2021/3/31 14:54:03', 101), NEWID());
 				print('    '+@vWorkPositionNo + '    '+@vWorkPositionName);
 				set @iTuoPanNo = @iTuopanNo + 1;
 			end;
