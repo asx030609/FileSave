@@ -1,4 +1,5 @@
 USE [FusionFLK]
+DELETE FROM WM_MachinePalletDetail;
 DELETE FROM WM_MachinePallet;
 DELETE FROM WM_Machine;
 

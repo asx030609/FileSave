@@ -1,5 +1,5 @@
 USE [FusionFLK]
---DELETE FROM WM_MachinePallet;
+DELETE FROM WM_MachinePallet  where MachineCode like 'F2%';
 /*----这里是头部只给出示例sql，另外很多条sql都放在另一分离出的主表文档中
 DELETE FROM WM_Machine;
 INSERT [dbo].[WM_Machine]([MachineCode], [MachineName], [MachineType], [MachineClassify], [ClientIP], [Active], [Using], [ExternalMachineCode], [CreateTime], [UpdateTime], [RowVersion]) VALUES ('J101', '1#卷烟机', 2, NULL, '199.199.160.1:80', 'True', 'False', '', CONVERT(datetime, '2021/3/31 14:47:26', 101), CONVERT(datetime, '2021/3/31 14:47:26', 101), NEWID());

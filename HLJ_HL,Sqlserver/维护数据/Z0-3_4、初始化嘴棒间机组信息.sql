@@ -1,5 +1,5 @@
 USE [FusionFLK]
-DELETE FROM WM_MachinePallet  WHERE MachineCode like 'Z30%';
+DELETE FROM WM_MachinePallet WHERE MachineCode like 'Z3%';
 --delete from WM_Machine WHERE MachineCode like 'Z30%';
 /*----这里是头部只给出示例sql，另外很多条sql都放在另一分离出的主表文档中
 DELETE FROM WM_Machine;
