@@ -81,10 +81,10 @@ Tables LoadTables()
 }
 
 
-		DataTable GetDataTable()
+		DataTable GetTableData(string tableName)
 		{
 			SchemaReader reader = new SqliteSchemaReader();
-			DataTable table = reader.LoadTableData(ConnectionString, "select * from ReplaceString");
+			DataTable table = reader.LoadTableData(ConnectionString, "select * from " + tableName);
 
 			return table;
 		}

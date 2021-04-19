@@ -18,27 +18,66 @@ create PROC pro_001
 		AS
 		BEGIN
 			DECLARE @iJizuNo INT;
+			DECLARE @vJizuNo varchar(50);
+			DECLARE @iTuopanNo INT;
+			DECLARE @vTuopanNo varchar(50);
+			/*----插入包装机和卷接机作业位置
 			SET @iJizuNo=1;
 			WHILE @iJizuNo <= 13
 			BEGIN
-				DECLARE @vJizuNo varchar(50);
 				set @vJizuNo = RIGHT('00'+cast(@iJizuNo as varchar), 2);
-				
-				DECLARE @iTuopanNo INT;
 				SET @iTuopanNo = 1;
 				WHILE @iTuopanNo <= 6
 				BEGIN
-					DECLARE @vTuopanNo varchar(50);
 					SET @vTuopanNo = RIGHT('000'+cast(@iTuopanNo as varchar), 3);
 					PRINT ('1' + @vJizuNo + @vTuopanNo);
-
+					----插入作业位置
 					INSERT [dbo].[TM_OperationEquipment]([Id], [WorkPositionNo], [WorkEquipmentCode], [WorkEquipmentName], [CreateTime], [UpdateTime], [RowVersion])
 						VALUES (NEWID(), ('1' + @vJizuNo + @vTuopanNo), 'AGV', 'AGV', CONVERT(datetime, '2021/3/22 14:49:38', 101), CONVERT(datetime, '2021/3/22 14:49:38', 101), NEWID());
 					SET @iTuopanNo = @iTuopanNo + 1;
 				END;
-				
+				----累加1
 				set @iJizuNo = @iJizuNo + 1;
 			END
+			--*/
+			----插入封装箱作业位置
+			SET @iJizuNo=1;
+			WHILE @iJizuNo <= 3
+			BEGIN
+				set @vJizuNo = RIGHT('00'+cast(@iJizuNo as varchar), 2);
+				SET @iTuopanNo = 1;
+				WHILE @iTuopanNo <= 2
+				BEGIN
+					SET @vTuopanNo = RIGHT('000'+cast(@iTuopanNo as varchar), 3);
+					PRINT ('2' + @vJizuNo + @vTuopanNo);
+					----插入作业位置
+					INSERT [dbo].[TM_OperationEquipment]([Id], [WorkPositionNo], [WorkEquipmentCode], [WorkEquipmentName], [CreateTime], [UpdateTime], [RowVersion])
+						VALUES (NEWID(), ('2' + @vJizuNo + @vTuopanNo), 'AGV', 'AGV', CONVERT(datetime, '2021/3/22 14:49:38', 101), CONVERT(datetime, '2021/3/22 14:49:38', 101), NEWID());
+					SET @iTuopanNo = @iTuopanNo + 1;
+				END;
+				----累加1
+				set @iJizuNo = @iJizuNo + 1;
+			END
+			--*/
+			----插入滤棒间作业位置
+			SET @iJizuNo=1;
+			WHILE @iJizuNo <= 6
+			BEGIN
+				set @vJizuNo = RIGHT('00'+cast(@iJizuNo as varchar), 2);
+				SET @iTuopanNo = 1;
+				WHILE @iTuopanNo <= 1
+				BEGIN
+					SET @vTuopanNo = RIGHT('000'+cast(@iTuopanNo as varchar), 3);
+					PRINT ('3' + @vJizuNo + @vTuopanNo);
+					----插入作业位置
+					INSERT [dbo].[TM_OperationEquipment]([Id], [WorkPositionNo], [WorkEquipmentCode], [WorkEquipmentName], [CreateTime], [UpdateTime], [RowVersion])
+						VALUES (NEWID(), ('3' + @vJizuNo + @vTuopanNo), 'AGV', 'AGV', CONVERT(datetime, '2021/3/22 14:49:38', 101), CONVERT(datetime, '2021/3/22 14:49:38', 101), NEWID());
+					SET @iTuopanNo = @iTuopanNo + 1;
+				END;
+				----累加1
+				set @iJizuNo = @iJizuNo + 1;
+			END
+			--*/
 		END;
 GO
 

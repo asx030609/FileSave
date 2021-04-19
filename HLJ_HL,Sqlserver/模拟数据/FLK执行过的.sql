@@ -9,6 +9,8 @@ SELECT * FROM BI_Product;-- WHERE ProductCode='5300001004689557101002014036';
 SELECT * FROM BI_Shift;
 
 SELECT * FROM WM_Location WHERE LocationCode='02-21-02';
+SELECT * FROM WM_Pallet where LocationCode in (
+	SELECT LocationCode FROM WM_Storage) and MatchPalletCode ='';
 SELECT * FROM WM_Storage;
 SELECT * FROM WM_Storage WHERE ProductCode='00003210 04789656 10100201 3036';
 SELECT * FROM WM_Storage WHERE LocationCode='02-21-02';
@@ -40,10 +42,13 @@ SELECT * FROM SYS_DictionaryGroup;
 
 
 ----
-SELECT * FROM TM_Task WHERE TaskStatus=1;
+SELECT * FROM TM_Task;
+SELECT * FROM TM_Task WHERE OriginLocationCode in (
+	SELECT TargetLocationCode FROM TM_Task WHERE TaskNo in ('233', '234', '235', '260', '262', '263')	
+	--这几个入库任务号对应货位不和实际匹配，有问题，所以看看是否在之后已经出库
+	);
 
 ----作业位置
-SELECT * FROM TM_WorkPosition;
 SELECT TB_A.WorkPositionNo, TB_A.WorkPositionName
 	, CAST( SUBSTRING(CAST(TB_A.WorkPositionNo AS CHAR), 2,2) AS INT) 多少列
 	, CAST( SUBSTRING(CAST(TB_A.WorkPositionNo AS CHAR), 4,2) AS INT) 多少层
