@@ -18,7 +18,7 @@ SELECT @BrandName=BrandName FROM BI_Brand WHERE BrandCode=@BrandCode;
 set @MachineCode='Z301';
 
 DECLARE My_Cursor CURSOR --定义游标
-FOR (SELECT MachineCode FROM WM_Machine) --查出需要的集合放到游标中
+FOR (SELECT MachineCode FROM WM_Machine where MachineCode like '%B1%') --查出需要的集合放到游标中
 
 OPEN My_Cursor; --打开游标，并进行操作
 FETCH NEXT FROM My_Cursor INTO @MachineCode;
