@@ -9,12 +9,12 @@ create PROC pro_001
 		DECLARE @workPathCode VARCHAR(MAX);
 		declare @orderNum INT;
 		BEGIN
-			SET @workPathCode='CR02-CR02';
+			SET @workPathCode='AGV-CR01-01';
 			------删除原先这个路径编码的信息
 			DELETE FROM TM_WorkPathNode WHERE WorkPathCode=@workPathCode;
 			DELETE FROM TM_WorkPath WHERE WorkPathCode=@workPathCode;
             INSERT [dbo].[TM_WorkPath]([WorkPathCode], [WorkPathName], [OriginWorkRegionCode], [TargetWorkRegionCode], [Active], [Priority], [Remark], [CreateTime], [UpdateTime], [RowVersion])
-            	VALUES (@workPathCode, @workPathCode, 'r-srm01', 'r-srm01', 'True', 0, '', CONVERT(datetime, '2021/3/17 9:35:07', 101), CONVERT(datetime, '2021/3/17 9:35:07', 101), NEWID());
+            	VALUES (@workPathCode, @workPathCode, 'r-AGV', 'r-srm01', 'True', 0, '', CONVERT(datetime, '2021/3/17 9:35:07', 101), CONVERT(datetime, '2021/3/17 9:35:07', 101), NEWID());
 
 			SET @orderNum = 1;
 			DECLARE @iLayer INT;
@@ -30,9 +30,9 @@ create PROC pro_001
 				BEGIN
 					DECLARE @vColum varchar(50);
 					SET @vColum = RIGHT('00'+cast(@iColum as varchar), 2);
-					PRINT ('3' + @vColum + @vLayer);
+					PRINT ('1' + @vColum + @vLayer);
 					INSERT [dbo].[TM_WorkPathNode]([Id], [WorkPathCode], [ParentId], [WorkPositionNo], [WorkPositionName], [PathNodeOrder], [CreateTime], [UpdateTime], [RowVersion])
-            			VALUES (NEWID(), @workPathCode, NULL, cast('3' + @vColum + @vLayer as int), '03排'+@vColum+'列'+@vLayer+'层', @orderNum, CONVERT(datetime, '2021/3/17 9:30:22', 101), CONVERT(datetime, '2021/3/17 9:30:22', 101), NEWID());
+            			VALUES (NEWID(), @workPathCode, NULL, cast('1' + @vColum + @vLayer as int), '01排'+@vColum+'列'+@vLayer+'层', @orderNum, CONVERT(datetime, '2021/3/17 9:30:22', 101), CONVERT(datetime, '2021/3/17 9:30:22', 101), NEWID());
 
 					SET @iColum = @iColum + 1;
 					SET @orderNum = @orderNum + 1;

@@ -8,14 +8,58 @@ SELECT * FROM BI_Product;-- WHERE ProductCode='5300001004689557101002014036';
 
 SELECT * FROM BI_Shift;
 
-SELECT * FROM WM_Location WHERE LocationCode='02-21-02';
+SELECT * FROM WM_Pallet WHERE InFrozenQuantity>0 OR OutFrozenQuantity > 0;
+
+SELECT * FROM WM_Location WHERE LocationCode='01-01-01';
+SELECT * FROM WM_Pallet WHERE LocationCode='01-01-01';
 SELECT * FROM WM_Pallet where LocationCode in (
 	SELECT LocationCode FROM WM_Storage) and MatchPalletCode ='';
 SELECT * FROM WM_Storage;
+SELECT * FROM WM_Storage WHERE LocationCode='01-01-01';
 SELECT * FROM WM_Storage WHERE ProductCode='00003210 04789656 10100201 3036';
 SELECT * FROM WM_Storage WHERE LocationCode='02-21-02';
 
 SELECT * FROM WM_OutBillAllot;
+
+----
+SELECT * FROM TM_Task WHERE TaskStatus in ('1'); --2,完成；1,执行中；0，等待中
+SELECT * FROM TM_Task WHERE TaskNo in ('389', '379', '386');
+SELECT * FROM TM_Task where OriginWorkPositionNo in ('2218', '2101')
+	ORDER BY TaskNo DESC;
+SELECT * FROM TM_Task WHERE OriginLocationCode in (
+	SELECT TargetLocationCode FROM TM_Task WHERE TaskNo in ('233', '234', '235', '260', '262', '263')	
+	--这几个入库任务号对应货位不和实际匹配，有问题，所以看看是否在之后已经出库
+	);
+SELECT * FROM TM_Task WHERE OriginLocationCode in (
+	SELECT TargetLocationCode FROM TM_Task WHERE TaskNo in ('233', '234', '235', '260', '262', '263')	--这几个入库任务号对应货位不和实际匹配，有问题，所以看看是否在之后已经出库
+	
+	);
+--update TM_Task set TaskStatus=1 where CurrentWorkPositionNo='2213';	--1、执行中；2、完成
+SELECT * FROM TM_Task WHERE CurrentWorkPositionNo='2213';
+
+----生产计划
+SELECT * FROM WM_ProductionPlan WHERE CreateTime <= CONVERT(datetime, '2021-4-21 00:00:00', 101) ORDER BY CreateTime DESC; ----计划状态是：Entered=0,Audited=1,Executing=2,Settled=3,PreExecute=4
+SELECT * FROM WM_ProductionPlanDetail WHERE MachineName LIKE '9#包装机' order by CreateTime desc;
+
+
+
+----作业位置
+SELECT TB_A.WorkPositionNo, TB_A.WorkPositionName
+	, CAST( SUBSTRING(CAST(TB_A.WorkPositionNo AS CHAR), 2,2) AS INT) 多少列
+	, CAST( SUBSTRING(CAST(TB_A.WorkPositionNo AS CHAR), 4,2) AS INT) 多少层
+	FROM TM_WorkPosition TB_A;
+
+
+----区域、模块、功能、权限、角色
+SELECT * FROM SYS_Area;
+SELECT * FROM SYS_Module;
+SELECT * FROM SYS_Function;
+SELECT * FROM SYS_Function WHERE Id='6D2A24AE-AC5F-1214-8D84-6BBF920161D3';
+SELECT * FROM SYS_Function WHERE NAME LIKE '%刷新%';
+SELECT * FROM SYS_Permissions WHERE FunctionId in (SELECT Id FROM SYS_Function WHERE NAME LIKE '%刷新%');
+SELECT * FROM SYS_Role WHERE NAME LIKE '%mes%';
+
+
 
 ----查询用户
 SELECT * FROM Sys_user;
@@ -39,31 +83,6 @@ SELECT * FROM SYS_Parameter WHERE ParameterValue LIKE '%海林%';
 SELECT * FROM SYS_Dictionary WHERE DictionaryName LIKE '%海林%';
 SELECT * FROM SYS_DictionaryDetail WHERE [Name] LIKE '%海林%';
 SELECT * FROM SYS_DictionaryGroup;
-
-
-----
-SELECT * FROM TM_Task;
-SELECT * FROM TM_Task WHERE OriginLocationCode in (
-	SELECT TargetLocationCode FROM TM_Task WHERE TaskNo in ('233', '234', '235', '260', '262', '263')	
-	--这几个入库任务号对应货位不和实际匹配，有问题，所以看看是否在之后已经出库
-	);
-
-----作业位置
-SELECT TB_A.WorkPositionNo, TB_A.WorkPositionName
-	, CAST( SUBSTRING(CAST(TB_A.WorkPositionNo AS CHAR), 2,2) AS INT) 多少列
-	, CAST( SUBSTRING(CAST(TB_A.WorkPositionNo AS CHAR), 4,2) AS INT) 多少层
-	FROM TM_WorkPosition TB_A;
-
-
-----区域、模块、功能、权限、角色
-SELECT * FROM SYS_Area;
-SELECT * FROM SYS_Module;
-SELECT * FROM SYS_Function;
-SELECT * FROM SYS_Function WHERE Id='6D2A24AE-AC5F-1214-8D84-6BBF920161D3';
-SELECT * FROM SYS_Function WHERE NAME LIKE '%刷新%';
-SELECT * FROM SYS_Permissions WHERE FunctionId in (SELECT Id FROM SYS_Function WHERE NAME LIKE '%刷新%');
-SELECT * FROM SYS_Role WHERE NAME LIKE '%mes%';
-
 
 -----
 /* 将TM_WorkPathNode表中的AGV-SRM01路径编码替换为AGV-SRM001
