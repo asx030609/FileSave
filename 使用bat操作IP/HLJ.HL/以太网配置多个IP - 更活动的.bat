@@ -15,6 +15,7 @@ netsh interface ipv4 add address name="以太网"  addr=172.30.10.22 mask=255.255.0
 ::goto end
 netsh interface ipv4 add address name="以太网" addr=199.199.180.6 mask=255.255.255.0 gateway=199.199.180.254 gwmetric=0
 netsh interface ipv4 add address name="以太网"  addr=192.168.1.14 mask=255.255.255.0 gateway=192.168.1.1 gwmetric=0
+netsh interface ipv4 add address name="以太网"  addr=199.199.160.253 mask=255.255.255.0 gateway=199.199.160.254 gwmetric=0
 ::黑龙江海林配置AP用如下
 netsh interface ipv4 add address name="以太网"  addr=169.254.1.100 mask=255.255.0.0 gwmetric=0	
 ::有错netsh interface ipv4 set dns "以太网" static 218.85.152.99 primary 
