@@ -11,9 +11,9 @@ echo 启用超级管理员权限成功
 netsh interface ipv4 set address name="以太网" source=dhcp
 echo set static IP
 REM 添加IP
-netsh interface ipv4 add address name="以太网"  addr=172.30.10.22 mask=255.255.0.0 gateway=172.30.20.1 gwmetric=0
+netsh interface ipv4 add address name="以太网"  addr=172.30.10.23 mask=255.255.0.0 gateway=172.30.20.1 gwmetric=0
 ::goto end
-netsh interface ipv4 add address name="以太网" addr=199.199.180.6 mask=255.255.255.0 gateway=199.199.180.254 gwmetric=0
+netsh interface ipv4 add address name="以太网" addr=199.199.180.7 mask=255.255.255.0 gateway=199.199.180.254 gwmetric=0
 netsh interface ipv4 add address name="以太网"  addr=192.168.1.14 mask=255.255.255.0 gateway=192.168.1.1 gwmetric=0
 netsh interface ipv4 add address name="以太网"  addr=199.199.160.253 mask=255.255.255.0 gateway=199.199.160.254 gwmetric=0
 ::黑龙江海林配置AP用如下
