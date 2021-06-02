@@ -40,6 +40,8 @@ SELECT * FROM TM_Task WHERE CurrentWorkPositionNo='2213';
 ----生产计划
 SELECT * FROM WM_ProductionPlan WHERE CreateTime <= CONVERT(datetime, '2021-4-21 00:00:00', 101) ORDER BY CreateTime DESC; ----计划状态是：Entered=0,Audited=1,Executing=2,Settled=3,PreExecute=4
 SELECT * FROM WM_ProductionPlanDetail WHERE MachineName LIKE '9#包装机' order by CreateTime desc;
+----机组呼叫
+SELECT MachineCode FROM WM_MachineCall WHERE CallTime between CONVERT(datetime, '2021/5/18', 101) and  CONVERT(datetime, '2021/5/19', 101);
 
 
 
