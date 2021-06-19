@@ -10,7 +10,8 @@ copy "%~0" "%windir%\system32\"
 echo 启用超级管理员权限成功
 
 
-goto three
+echo 跳转到one部分，是:one开始的
+goto one
 
 :three
 @echo three
@@ -20,9 +21,12 @@ rd "E:\test\a1\b1\c1\d1\" /s /q
 pause
 
 :one
+
+dir
+::两个冒号后的是备注，不显示这些备注，要隔行备注，不然会影响同一行的命令，会导致上行dir无法执行
 @echo 开始测试
 set /p var=随便输入个命令: 
-%var%
+%var%	
 @echo off
 if %ERRORLEVEL% == 0 (
    echo !var! 执行成功了
@@ -33,9 +37,9 @@ pause
 
 
 :two
-@echo part-2，dos遍历文件夹，把E盘下的使用bat操作IP文件夹下的所有文件都复写到文件
+@echo part-2，dos遍历文件夹，把E盘下的“使用bat操作IP”文件夹下的所有文件都复写到文件
 set work_path=E:\repository\FileSaveV1\使用bat操作IP
-E: 
+E: 	
 cd %work_path% 
 for /R %%s in (.,*) do ( 
 dir /b %%s
