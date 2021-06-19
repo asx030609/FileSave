@@ -3,9 +3,10 @@
 d:
 
 for /L %%i in (1,1,%999999999%) do (
-ping %1192.168.1.1 -n 1% && echo %% >>ping.txt
-date /t >>ping.txt
-time /t >>ping.txt
+echo %1  >>ping.txt
+echo 1% >>ping.txt
+echo %% >>ping.txt
+echo %date%%time% >> ping.txt
 )
 @echo on
 echo %date%%time% >> ping.txt
