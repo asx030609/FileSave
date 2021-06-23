@@ -2,9 +2,9 @@
 
 d:
 
-for /L %%i in (1,1,%999999999%) do (
-ping 172.30.20.206 >>20_206_ping.txt
-echo %date%%time% >> 20_206_ping.txt
-)
-
-pause
+set fuck=1
+:loop
+ping 172.30.20.206 >>ping20_206.txt
+echo %date%%time% >>ping20_206.txt
+set /a fuck+=1
+goto loop
