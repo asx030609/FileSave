@@ -37,6 +37,9 @@ SELECT * FROM TM_Task WHERE OriginLocationCode in (
 --update TM_Task set TaskStatus=1 where CurrentWorkPositionNo='2213';	--1、执行中；2、完成
 SELECT * FROM TM_Task WHERE CurrentWorkPositionNo='2213';
 
+----机组托盘
+SELECT * FROM WM_MACHINE;
+SELECT * FROM WM_MachinePallet;	--PalletStatus，Idle=0,Call=1,Material=2,DistableCall=3,BackCall=4,ReturnCall=5,Transfer=6,MoveMaterial=7
 ----生产计划
 SELECT * FROM WM_ProductionPlan WHERE CreateTime <= CONVERT(datetime, '2021-4-21 00:00:00', 101) ORDER BY CreateTime DESC; ----计划状态是：Entered=0,Audited=1,Executing=2,Settled=3,PreExecute=4
 SELECT * FROM WM_ProductionPlanDetail WHERE MachineName LIKE '9#包装机' order by CreateTime desc;
