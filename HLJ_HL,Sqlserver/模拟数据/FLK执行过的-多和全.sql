@@ -5,6 +5,7 @@ select * from BI_Product where charindex(SUBSTRING(ProductCode,18,3),Weight
 SELECT SUBSTRING(ProductCode, 19, 3), Productcode, LEN(ProductCode) FROM BI_PRODUCT;
 SELECT LEN(ProductCode) FROM BI_Product;
 SELECT * FROM BI_Product;-- WHERE ProductCode='5300001004689557101002014036';
+SELECT * FROM BI_ProductUnit;	--UnitType=1代表是使用默认的，仓库单位
 
 SELECT * FROM BI_Shift;
 

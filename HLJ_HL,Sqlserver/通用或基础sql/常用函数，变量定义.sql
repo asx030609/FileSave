@@ -4,6 +4,7 @@ SELECT SUBSTRING('1234567890abcdef', 0, 1);		--空	----SubString是从索引1开始的
 SELECT SUBSTRING('1234567890abcdef', 1, 1);		--1
 SELECT SUBSTRING('1234567890abcdef', 1, 2);		--12
 SELECT SUBSTRING('1234567890abcdef', 2, 1);		--2
+SELECT SUBSTRING('1234567890abcdef', 2, 3);		--234
 SELECT CHARINDEX(' ', ' 123456');	--1；索引是从1开始的
 SELECT CHARINDEX(' ', '123456');	--0；索引是从1开始的，假若不存在则索引为0
 
@@ -19,7 +20,7 @@ DECLARE @LEN_ INT;
 set @LEN_ = 5;
 SELECT RIGHT(replicate('0', @LEN_)+'2', @LEN_);	----用0左补足到@LEN_位
 SELECT RIGHT(replicate('0', 5)+'2', 5);	----用0左补足到5位
-SELECT LEFT('2' + replicate('0', 4), 4);		----用0又补足到4位
+SELECT LEFT('2' + replicate('0', 4), 4);		----用右又补足到4位
 
 ----*****分组，选择前面几列
 ----SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY GETDATE()) AS ROWNUM,TB_A.* FROM WM_Location TB_A ORDER BY LocationCode) TB_B 
@@ -28,3 +29,28 @@ SELECT LEFT('2' + replicate('0', 4), 4);		----用0又补足到4位
 SELECT TOP 10 TB_A.* FROM  WM_Location TB_A ORDER BY LocationCode
 ----*****试试 这个 oracle 和 sql server 应该都是支持的
 select * FROM  WM_Location order by LocationCode desc OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY;
+
+DECLARE @Output nvarchar(50);
+IF @Output is null
+	print('2332');	--能打印出来
+--SELECT ISNULL(@Output, '');	--结果为空字符串
+if (ISNULL(@Output, '')<>'') 
+	print('5962'); 
+set @Output='1';
+if (ISNULL(@Output, '')<>'') 
+	print('5963');	--能打印出来
+SELECT @Output= from WM_Pallet where LocationCode='01-01-01';
+print(@Output);
+--SELECT case (Id is NULL) from WM_Pallet where LocationCode='01-01-01';	--ERROR
+
+
+SELECT CHARINDEX('123456', 'A'); --0
+SELECT CHARINDEX('ABC', 'A'); --0
+SELECT CHARINDEX('A', 'ABC'); --1
+SELECT CHARINDEX('@1','select * from wm_pallet where locationCode=@1 and id=@2 and productCode=@3');
+
+
+SELECT REPLACE('123456ABCDEFGHIJKL', 'KL','');
+
+
+
