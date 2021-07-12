@@ -7,16 +7,16 @@ go
 create PROC pro_001
         @startRowIndexId INT,
         @maxNumberRows  INT
-		AS
-		BEGIN
-			DECLARE @sqlfilter  VARCHAR(max);
-			SET @sqlfilter = ' ';
-			DECLARE @sqlmain  VARCHAR(max);
-			SET @sqlmain = ' ';
-			SET @sqlmain = ' SELECT * FROM SYS_Area
-				AS tableu';
-			EXEC (@sqlmain + @sqlfilter)
-		END;
+AS
+BEGIN
+	DECLARE @sqlfilter  VARCHAR(max);
+	SET @sqlfilter = ' ';
+	DECLARE @sqlmain  VARCHAR(max);
+	SET @sqlmain = ' ';
+	SET @sqlmain = ' SELECT * FROM SYS_Area
+		AS tableu';
+	EXEC (@sqlmain + @sqlfilter)
+END;
 GO
 
 --EXECUTE pro_001  1,1;	----³É¹¦
