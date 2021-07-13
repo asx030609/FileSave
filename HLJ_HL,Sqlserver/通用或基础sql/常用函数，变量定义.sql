@@ -30,6 +30,7 @@ SELECT TOP 10 TB_A.* FROM  WM_Location TB_A ORDER BY LocationCode
 ----*****试试 这个 oracle 和 sql server 应该都是支持的
 select * FROM  WM_Location order by LocationCode desc OFFSET 5 ROWS FETCH NEXT 5 ROWS ONLY;
 
+----ISNULL函数判断是否值为空或null****************
 DECLARE @Output nvarchar(50);
 IF @Output is null
 	print('2332');	--能打印出来
@@ -42,6 +43,7 @@ if (ISNULL(@Output, '')<>'')
 SELECT @Output= from WM_Pallet where LocationCode='01-01-01';
 print(@Output);
 --SELECT case (Id is NULL) from WM_Pallet where LocationCode='01-01-01';	--ERROR
+----***********************************************
 
 
 SELECT CHARINDEX('123456', 'A'); --0

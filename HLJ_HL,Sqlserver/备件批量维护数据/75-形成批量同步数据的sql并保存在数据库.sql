@@ -21,6 +21,10 @@ set @insertStr ='INSERT [dbo].[BI_Product]([ProductCode], [ProductName], [Produc
 	+ '	VALUES (''@1'', ''@2'', 0, ''@2'', ''@2'', 0, '''', '''', NULL, '''', 0, ''False'', 0, 0, 0, ''True'', ''False'', 0, '''', '''', '''', '''', '''', '''', '''''
 	+ ', ''0'', SYSDATETIME(), SYSDATETIME(), NEWID());';
 INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT @insertStr, ProductCode, ProductName,31,SYSDATETIME() from TB01 Group by ProductCode,ProductName;
+----更新BI_Product的ModelCode
+SET @insertStr = 'UPDATE BI_Product SET ModelCode=''@1'' where ProductCode=''@2'';';
+INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT @insertStr, ModelCode, ProductCode,35,SYSDATETIME() from TB01 WHERE ModelCode IS NOT NULL
+	Group by ProductCode,ModelCode;
 ----插入BI_ProductUnit
 set @insertStr ='INSERT [dbo].[BI_ProductUnit]([Id], [ProductCode], [UnitCode], [UnitName], [UnitType], [TransferRate], [Active], [DefaultUnit], [CreateTime], [UpdateTime], [RowVersion])'
 	+ '	values (''@1'', ''@2'', ''@3'', ''@4'', 1, @5, ''True'', ''True'', SYSDATETIME(), SYSDATETIME(), NEWID());';

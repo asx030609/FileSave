@@ -1,1 +1,1 @@
-SELECT Top 1 Id FROM WM_Pallet where LocationCode='21-07-03';
+SELECT Top 1 Id FROM WM_Pallet where LocationCode='21-17-03';

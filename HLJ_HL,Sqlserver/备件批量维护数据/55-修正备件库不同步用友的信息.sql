@@ -4,6 +4,13 @@ use [FusionBJK]
 DELETE FROM WM_STORAGE;
 UPDATE WM_Pallet SET MatchPalletCode='', MatchPalletName='',UniqueId='',ProductCount=0,StorageQuantity=0,InFrozenQuantity=0,OutFrozenQuantity=0
       ,ProductPosition='',BrandCodes='',BrandNames='',PalletTypeCode='',PalletTypeName='';
+----清除货位产品预设信息
+UPDATE WM_Location SET PresetProductCode=NULL,PresetProductName=NULL;
+--清除产品信息
+DELETE FROM BI_Unit;
+DELETE FROM BI_ProductUnit;
+DELETE FROM BI_Product;
+DELETE FROM BI_Model;
 ----删除入库单据信息
 DELETE FROM WM_InBillAllot;
 DELETE FROM WM_InBillDetail;
