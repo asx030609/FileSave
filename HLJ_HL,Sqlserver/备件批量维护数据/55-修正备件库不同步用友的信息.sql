@@ -6,8 +6,8 @@ UPDATE WM_Pallet SET MatchPalletCode='', MatchPalletName='',UniqueId='',ProductC
       ,ProductPosition='',BrandCodes='',BrandNames='',PalletTypeCode='',PalletTypeName='';
 ----清除货位产品预设信息
 UPDATE WM_Location SET PresetProductCode=NULL,PresetProductName=NULL;
---清除产品信息
-DELETE FROM BI_Unit;
+----清除产品信息
+--DELETE FROM BI_Unit;
 DELETE FROM BI_ProductUnit;
 DELETE FROM BI_Product;
 DELETE FROM BI_Model;

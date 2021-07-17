@@ -1,5 +1,6 @@
-use [TestDB]
-/*
+ï»¿use [TestDB]
+
+--/*
 Alter table TB01 ADD ShelfNo nvarchar(50);
 GO
 Alter table TB01 ADD LocationNo nvarchar(50);
@@ -14,22 +15,23 @@ Alter table TB01 add UnitCode nvarchar(50);
 GO
 Alter table TB01 add [Transfer] nvarchar(50);
 GO
+UPDATE TB01 SET [Transfer]=1000;
 Alter table TB01 add ProductUnitId nvarchar(50);
 GO
 Alter table TB01 add ModelCode nvarchar(32);
 GO
 
-----¸üĞÂĞÂÌí¼Ó×Ö¶ÎÊı¾İ
+----æ›´æ–°æ–°æ·»åŠ å­—æ®µæ•°æ®
 UPDATE TB01 SET ShelfNo=SUBSTRING(LocationName,1,2),LayerNo=SUBSTRING(LocationName, 4,2),LocationNo=SUBSTRING(LocationName,7,2);
 UPDATE TB01 SET LocationCode=SUBSTRING(LocationName,1,2)+'-'+SUBSTRING(LocationName, 4,2)+'-'+SUBSTRING(LocationName,7,2);
 GO
 --*/
-if exists(select * from dbo.sysobjects where id=object_id(N'pro_001') and OBJECTPROPERTY(id, N'IsProcedure')=1)	--»òÕßÊ¹ÓÃselect * from dbo.sysobjects where xtype='P';£¿
+if exists(select * from dbo.sysobjects where id=object_id(N'pro_001') and OBJECTPROPERTY(id, N'IsProcedure')=1)	--æˆ–è€…ä½¿ç”¨select * from dbo.sysobjects where xtype='P';ï¼Ÿ
 	drop procedure pro_001;
 go
-----Õı³£Çé¿öÏÂÊÇÒ»¹ñÒ»²ã×î¶à32Î»£¬µ«ÊÇÓÃÓÑÉÏ¾¡È»¿ÉÒÔµ½58
-----1-N¹ñ£¬1-M²ã£¬N¡¢MÒÑ¾­¹Ì¶¨£¬ÒªÔÚÕâ¹Ì¶¨µÄ»ù´¡ÉÏÌí¼Ó33-58Î»
-----ÕÒ³öN¡¢M
+----æ­£å¸¸æƒ…å†µä¸‹æ˜¯ä¸€æŸœä¸€å±‚æœ€å¤š32ä½ï¼Œä½†æ˜¯ç”¨å‹ä¸Šå°½ç„¶å¯ä»¥åˆ°58
+----1-NæŸœï¼Œ1-Må±‚ï¼ŒNã€Må·²ç»å›ºå®šï¼Œè¦åœ¨è¿™å›ºå®šçš„åŸºç¡€ä¸Šæ·»åŠ 33-58ä½
+----æ‰¾å‡ºNã€M
 create PROC pro_001
 AS
 BEGIN
@@ -52,32 +54,34 @@ BEGIN
 	while(@IDNum <= @unitTotalNum)
 	begin
 		----print(@IDNum);
-		select @unitName=UnitName,@v_Model=Model,@v_ProductCode=ProductCode from TB01 WHERE ID=@IDNum;	--IDÊÇ×ÔÔöÎ¨Ò»¼ü£¬identify(1,1)
-		--select @unitCode=UnitCode from FusionBJK.DBO.BI_ProductUnit WHERE UnitName=@unitName;
+		select @unitName=UnitName,@v_Model=ModelCode,@v_ProductCode=ProductCode from TB01 WHERE ID=@IDNum;	--IDæ˜¯è‡ªå¢å”¯ä¸€é”®ï¼Œidentify(1,1)
+		select @unitCode=UnitCode from FusionBJK.DBO.BI_ProductUnit WHERE UnitName=@unitName;	--å¯¼å…¥çš„æ•°æ®æ²¡æœ‰ç¼–ç ï¼Œæ‰€ä»¥è¿˜æ˜¯ä»åŸå…ˆæ•°æ®åŠ 
+		update TB01 set UnitCode=@unitCode where ID=@IDNum;
 		--select @transfer=TransferRate,@unitId=Id from FusionBJK.DBO.BI_ProductUnit WHERE UnitName=@unitName and UnitType=1;
+		----è¿˜æ˜¯å¾—é€šè¿‡ä¸´æ—¶è¡¨æ“ä½œProductUnitId**************---------------------
 		set @unitId = null;
 		select @unitId=ProductUnitId from #TP_01 WHERE UnitName=@unitName and ProductCode=@v_ProductCode;
-		--Í¨¹ıÕâÁ½²½µ÷ÊÔ½øÈ¥¿´@unitId£¬·¢ÏÖÊ¹ÓÃselect @unitId=ProductUnitId from TB01 WHERE UnitName=@unitName and ProductCode=@v_ProductCode;
-		--¾ÍËãºóÃæÊ¹ÓÃUpdate¸üĞÂÁË,µÃµ½µÄ½á¹ûÒ²Îªnull»ò¿Õ£¬ÕâÊÇÒòÎªselect @unitIdÊÇÈ¡ºóÃæÄÇÌõÊı¾İµ¼ÖÂµÄÂğ£¿ºÜÓĞ¿ÉÄÜ
-		--ÒªÍ¨¹ıÁÙÊ±±í·½Ê½,
+		--é€šè¿‡è¿™ä¸¤æ­¥è°ƒè¯•è¿›å»çœ‹@unitIdï¼Œå‘ç°ä½¿ç”¨select @unitId=ProductUnitId from TB01 WHERE UnitName=@unitName and ProductCode=@v_ProductCode;
+		--å°±ç®—åé¢ä½¿ç”¨Updateæ›´æ–°äº†,å¾—åˆ°çš„ç»“æœä¹Ÿä¸ºnullæˆ–ç©ºï¼Œè¿™æ˜¯å› ä¸ºselect @unitIdæ˜¯å–åé¢é‚£æ¡æ•°æ®å¯¼è‡´çš„å—ï¼Ÿå¾ˆæœ‰å¯èƒ½
+		--è¦é€šè¿‡ä¸´æ—¶è¡¨æ–¹å¼,
 		--IF(@v_ProductCode='00604569790')	
 		--	PRINT(@v_ProductCode);
 		--print(@unitId + '-' + @v_ProductCode);
-		--update TB01 set UnitCode=@unitCode,[Transfer]=@transfer where ID=@IDNum;
 		if(''=ISNULL(@unitId,''))
 			set @unitId=NEWID();
 		ELSE
-			PRINT('´æÔÚ²úÆ·'+ @v_ProductCode);
+			PRINT('å­˜åœ¨äº§å“'+ @v_ProductCode);
 		--print(@unitId + ',' + @v_ProductCode);
 		update TB01 set ProductUnitId=@unitId where ID=@IDNum;
 		Insert into #TP_01 SELECT @unitId,@unitName,@v_ProductCode;
-		--if(ISNULL(@v_Model,'')<>'')
-		--	update TB01 set ModelCode=@v_Model where ID=@IDNum;
+		----ç»“æŸä¸´æ—¶è¡¨æ“ä½œProductUnitId**************---------------------------------
+
 		SET @IDNum=@IDNum+1;
 	end;
 END;
 GO
+UPDATE TB01 SET ModelCode=SubString(ModelName, 1, 32);
 EXECUTE pro_001;
 GO
---SELECT SUBSTRING(LocationName,1,2) '¼ÜÊı',SUBSTRING(LocationName, 4,2) '²ãÊı',SUBSTRING(LocationName,7,2) 'Î»Êı',LocationName FROM TB01;
+--SELECT SUBSTRING(LocationName,1,2) 'æ¶æ•°',SUBSTRING(LocationName, 4,2) 'å±‚æ•°',SUBSTRING(LocationName,7,2) 'ä½æ•°',LocationName FROM TB01;
 --SELECT * FROM TB01;

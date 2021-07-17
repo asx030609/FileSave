@@ -1,19 +1,20 @@
 use [TestDB]
 ----******总体提逻辑*****----
 --一、准备好数据，sql放在文件"相应数据库中修整数据字段或表等"中
---二、通过以下拼接字符串获取插入或者更改sql并保存在数据表中
+--二、通过以下拼接字符串获取插入或者更改sql并保存在数据表中，添加时候有个技巧：使用PK键重复防止真正添加上，
 --三、将获取的sql通过dbo.f_PlaceHolderStr转换后在目标数据库中执行--例如，SELECT dbo.f_PlaceHolderStr(CombineSql,Param01,Param02,Param03,Param04,Param05) FROM TL_ExecuteSql ORDER BY ID;
 ----*********************----
 
 DELETE FROM TL_ExecuteSql;
-----插入BI_Unit
-Declare @insertStr nvarchar(1000)='INSERT [dbo].[BI_Unit]([UnitCode], [UnitName], [TransferRate], [Active], [CreateTime], [UpdateTime], [RowVersion])'
-	+ 'VALUES (''@1'', ''@2'', 1, ''True'', SYSDATETIME(), SYSDATETIME(), NEWID());';
-INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT @insertStr, UnitCode, UnitName,1,SysdateTime() from TB01 Group by UnitCode,UnitName;
+Declare @insertStr nvarchar(1000)= '';
+------插入BI_Unit
+--SET @insertStr= 'INSERT [dbo].[BI_Unit]([UnitCode], [UnitName], [TransferRate], [Active], [CreateTime], [UpdateTime], [RowVersion])'
+--	+ 'VALUES (''@1'', ''@2'', 1, ''True'', SYSDATETIME(), SYSDATETIME(), NEWID());';
+--INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT @insertStr, UnitCode, UnitName,1,SysdateTime() from TB01 Group by UnitCode,UnitName;
 ----插入BI_Model
 SET @insertStr= 'INSERT [dbo].[BI_Model]([ModelCode], [ModelName], [Active], [Remark], [CreateTime], [UpdateTime], [RowVersion])'
 	+ 'VALUES (''@1'', ''@2'', ''True'', '''', SYSDATETIME(), SYSDATETIME(), NEWID());';
-INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT @insertStr,ModelCode, Model,21,SYSDATETIME() from TB01 where Model is not null Group by ModelCode, Model;
+INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT @insertStr,ModelCode, ModelName,21,SYSDATETIME() from TB01 where ModelName is not null Group by ModelCode, ModelName;
 ----插入BI_Product
 set @insertStr ='INSERT [dbo].[BI_Product]([ProductCode], [ProductName], [ProductNo], [FullPhoneticize], [ShortPhoneticize], [DisplayOrder], [UniformCode], [FacturerCode]'
 	+ ', [CargoOwnerCode], [ModelCode], [PackType], [Abnormity], [Length], [Width], [Height], [Active], [IsBigProduct], [SortNo], [Remark], [ProductCategoryCode], [ProductBreedCode]'
@@ -27,13 +28,14 @@ INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT
 	Group by ProductCode,ModelCode;
 ----插入BI_ProductUnit
 set @insertStr ='INSERT [dbo].[BI_ProductUnit]([Id], [ProductCode], [UnitCode], [UnitName], [UnitType], [TransferRate], [Active], [DefaultUnit], [CreateTime], [UpdateTime], [RowVersion])'
-	+ '	values (''@1'', ''@2'', ''@3'', ''@4'', 1, @5, ''True'', ''True'', SYSDATETIME(), SYSDATETIME(), NEWID());';
+	+ '	values (''@1'', ''@2'', ''@3'', @4, 1, @5, ''True'', ''True'', SYSDATETIME(), SYSDATETIME(), NEWID());';
 --print(@insertStr);
-INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,Param03,Param04,Param05,TaskType,CreateTime) SELECT @insertStr,ProductUnitId, ProductCode, UnitCode, UnitName,[Transfer],41,SYSDATETIME() 
+INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,Param03,Param04,Param05,TaskType,CreateTime) SELECT @insertStr,ProductUnitId, ProductCode, UnitCode, UnitName,'1000',41,SYSDATETIME() 
 	from TB01 Group by ProductUnitId, ProductCode, UnitCode, UnitName,[Transfer];
 --/*
-SET @insertStr = 'UPDATE [dbo].[WM_Location] SET [PresetProductCode] = ''@1'' WHERE [LocationCode] = ''@2'';';
-INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT @insertStr, ProductCode, LocationCode,51,SYSDATETIME() from TB01 where LocationName like '%柜%';
+----更新货位上的预设产品信息
+SET @insertStr = 'UPDATE [dbo].[WM_Location] SET [PresetProductCode] = ''@1'',PresetProductName=''@2'' WHERE [LocationCode] = ''@3'';';
+INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,Param03,TaskType,CreateTime) SELECT @insertStr, ProductCode,ProductName, LocationCode,51,SYSDATETIME() from TB01 where LocationName like '%柜%';
 ----更新库存对应的pallet
 set @insertStr ='UPDATE [dbo].[WM_Pallet] SET [ProductCount] = ProductCount+1, StorageQuantity=StorageQuantity+@1 WHERE [LocationCode] = ''@2'';';
 INSERT INTO TL_ExecuteSql(CombineSql,Param01,Param02,TaskType,CreateTime) SELECT @insertStr, Quantity*[Transfer], LocationCode,61,SYSDATETIME() from TB01;

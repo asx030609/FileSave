@@ -14,7 +14,7 @@ BEGIN
 	Declare @i_EndJia int = 18;
 	Declare @i_EndLayer int = 5
 	Declare @i_EndPlace int = 7;
-	Declare @i_BeginJia int = 16;
+	Declare @i_BeginJia int = 1;
 	Declare @i_BeginLayer int = 1;
 	Declare @i_BeginPlace int = 1;
 

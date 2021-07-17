@@ -56,3 +56,8 @@ SELECT REPLACE('123456ABCDEFGHIJKL', 'KL','');
 
 
 
+SELECT * INTO SYN_PRODUCT	--需要创建的新表
+	FROM #type	--原来的表名
+	where (1=2);	--如果打算连数据都复制过去，则末尾的“WHERE 1=2”取消即可
+
+
